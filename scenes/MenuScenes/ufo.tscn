@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/ufo.gd" type="Script" id=1]
+[ext_resource path="res://texture_ui/game/enemy/ufo.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/CollisionPolygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -15, 0 ), Vector2( 864.29, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/ufo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 67.223, 549.201 ), Vector2( 946.76, 549.201 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/CollisionPolygon2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 879.839, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim Reverse"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/CollisionPolygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 860.69, 0 ), Vector2( -15.2, 2.658 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("KinematicBody2D/ufo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 943.069, 551.04 ), Vector2( 67.1, 551.04 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("KinematicBody2D/CollisionPolygon2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 879.839, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="UFO" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="KinematicBody2D"]
+visible = false
+position = Vector2( 219.96, 0 )
+polygon = PoolVector2Array( 1.83307, 550.514, 27.4575, 536.555, 34.9573, 536.138, 49.3319, 520.93, 54.1235, 521.069, 61.7317, 508.551, 72.7763, 508.551, 80.1919, 520.069, 85.3727, 520.931, 99.0529, 534.264, 100.997, 536.277, 108.567, 536.416, 138.288, 552.805, 138.427, 556.694, 99.2613, 569.957, 93.9251, 569.648, 88.3964, 574.503, 84.9253, 577.185, 83.0319, 578.132, 87.5254, 584.818, 89.0275, 587.283, 91.552, 588.388, 92.1831, 589.65, 92.1831, 592.017, 90.6053, 594.383, 87.7653, 594.541, 85.581, 594.402, 84.1922, 593.36, 82.0395, 587.943, 78.7062, 582.735, 75.4424, 578.985, 58.7067, 578.777, 51.068, 589.402, 49.6097, 594.054, 47.8472, 594.541, 44.5338, 594.225, 43.2716, 591.859, 43.9027, 589.177, 45.0072, 588.388, 46.2764, 588.291, 53.3695, 578.132, 43.7071, 571.694, -2.88904, 556.555, -3.16681, 553.013 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+position = Vector2( 204.822, 0 )
+polygon = PoolVector2Array( 11.0329, 549.138, 31.7473, 536.907, 42.986, 532.5, 49.4868, 532.5, 58.9625, 521.041, 62.7088, 518.397, 66.6753, 516.523, 73.9474, 504.734, 89.5934, 504.404, 98.408, 516.523, 101.383, 516.523, 115.266, 530.737, 115.927, 532.28, 124.191, 532.5, 153.72, 547.265, 153.83, 557.732, 111.079, 570.623, 103.917, 577.234, 101.383, 578.116, 104.138, 581.421, 111.189, 585.388, 111.079, 592.44, 103.697, 592.329, 98.408, 592.219, 97.1259, 585.28, 89.7036, 578.116, 74.9391, 578.556, 68.2179, 585.057, 65.7939, 592.329, 55.1061, 592.329, 55.5469, 582.854, 62.1748, 580.287, 63.3699, 575.912, 59.6236, 574.48, 56.208, 569.742, 35.0528, 564.563, 11.3635, 556.299 )
+
+[node name="ufo" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 287.107, 549.201 )
+scale = Vector2( 2.0376, 2.20357 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )
+"anims/New Anim Reverse" = SubResource( 2 )

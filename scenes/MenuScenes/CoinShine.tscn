@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://texture_ui/game/coin_shine/1.png" type="Texture" id=1]
+[ext_resource path="res://texture_ui/game/coin_shine/3.png" type="Texture" id=2]
+[ext_resource path="res://texture_ui/game/coin_shine/4.png" type="Texture" id=3]
+[ext_resource path="res://texture_ui/game/coin_shine/5.png" type="Texture" id=4]
+[ext_resource path="res://texture_ui/game/coin_shine/6.png" type="Texture" id=5]
+[ext_resource path="res://texture_ui/game/coin_shine/7.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "ShineFrames"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShineCoin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5 ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ShineCoin" type="AnimatedSprite" parent="."]
+position = Vector2( 498.93, 315.034 )
+frames = SubResource( 1 )
+frame = 5
+
+[node name="AnimationFrames" type="AnimationPlayer" parent="."]
+anims/ShineFrames = SubResource( 2 )
