@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scripts/icon.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Not enough money:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 249, 390.12 ), Vector2( 249, 153.76 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Not enough money" type="Label" parent="."]
+margin_left = 249.0
+margin_top = 378.302
+margin_right = 734.0
+margin_bottom = 420.302
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Not enough money"
+
+[node name="icon" type="Sprite" parent="Not enough money"]
+position = Vector2( 290.8, -68.102 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )

@@ -1,27 +1,34 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://scripts/MenuScripts/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://FX/Shader.tscn" type="PackedScene" id=2]
-[ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=3]
-[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=4]
-[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=6]
-[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=7]
-[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=8]
-[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=9]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=10]
-[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=13]
+[ext_resource path="res://scripts/ShopMenu.gd" type="Script" id=1]
+[ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
+[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=3]
+[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
+[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=7]
+[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=8]
+[ext_resource path="res://texture_ui/menu/not_enought_money.png" type="Texture" id=9]
+[ext_resource path="res://scripts/not_enought_money.gd" type="Script" id=10]
+[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/menu/used_button.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/characters/pro_rocket_2.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/characters/master_rockey_3.png" type="Texture" id=17]
+[ext_resource path="res://texture_ui/game/characters/gold_rocket_4.png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/game/characters/node_rocket_5.png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/game/characters/3d_rocket_7.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 use_filter = true
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=3]
 length = 0.7
@@ -38,19 +45,19 @@ tracks/0/keys = {
 "values": [ Vector2( -456.008, -76.462 ), Vector2( -456.008, 55.178 ), Vector2( -456.008, 16.958 ), Vector2( -456.008, 28.968 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Rocket_icon:position")
+tracks/1/path = NodePath("HomeButton:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 5.09824, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -246.201, 325.93 ), Vector2( -550.35, -271.82 ) ]
+"values": [ Vector2( 420.803, -120.85 ), Vector2( 420.803, 2.73 ), Vector2( 420.803, -24.32 ), Vector2( 420.803, -11.12 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HomeButton:rect_position")
+tracks/2/path = NodePath("LabelCoin:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -59,26 +66,74 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 420.803, -120.85 ), Vector2( 420.803, 2.73 ), Vector2( 420.803, -24.32 ), Vector2( 420.803, -11.12 ) ]
+"values": [ Vector2( -400, -102.04 ), Vector2( -400, 29.65 ), Vector2( -400, -10.99 ), Vector2( -400, 2.12 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("LabelCoin:rect_position")
+tracks/3/path = NodePath("Rocket_icon:rect_position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 4, 1 ),
 "update": 0,
-"values": [ Vector2( -400, -102.04 ), Vector2( -400, 29.65 ), Vector2( -400, -10.99 ), Vector2( -400, 2.12 ) ]
+"values": [ Vector2( -417.268, 40 ), Vector2( -745.818, -557.63 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Rocket_icon:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ 0.0, -15.0 ]
 }
 
-[sub_resource type="DynamicFont" id=4]
-size = 30
-font_data = ExtResource( 5 )
+[sub_resource type="Animation" id=4]
+resource_name = "New Anim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("not_enought_money:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 518.055, 446.452 ), Vector2( 518.055, 131.682 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("not_enought_money:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -109,18 +164,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="Shader" type="TextureRect" parent="."]
-editor/display_folded = true
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="WorldEnvironment" parent="Shader" instance=ExtResource( 2 )]
-
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 
 [node name="Elements" type="TextureRect" parent="."]
@@ -133,7 +180,7 @@ expand = true
 [node name="BackForLabel" type="Sprite" parent="Elements"]
 position = Vector2( 170.111, 73.28 )
 scale = Vector2( 1.24542, 1.09997 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="WelcomeLabel" type="Label" parent="Elements"]
 margin_left = 10.195
@@ -148,19 +195,23 @@ valign = 1
 [node name="coin_icon" type="Sprite" parent="Elements"]
 position = Vector2( -456.008, -76.462 )
 scale = Vector2( 1.71697, 1.71697 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
-[node name="Rocket_icon" type="Sprite" parent="Elements"]
-position = Vector2( -246.201, 325.93 )
-scale = Vector2( 0.722933, 0.722933 )
-texture = ExtResource( 7 )
+[node name="Rocket_icon" type="TextureButton" parent="Elements"]
+margin_left = -417.268
+margin_top = 40.0
+margin_right = -27.268
+margin_bottom = 613.0
+rect_pivot_offset = Vector2( 175.44, 264.2 )
+texture_normal = ExtResource( 6 )
+expand = true
 
 [node name="HomeButton" type="TextureButton" parent="Elements"]
 margin_left = 420.803
 margin_top = -120.85
 margin_right = 505.803
 margin_bottom = -37.85
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
@@ -169,11 +220,25 @@ margin_top = -102.04
 margin_right = -360.0
 margin_bottom = -50.04
 custom_fonts/font = SubResource( 2 )
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
 anims/AnimatonElements = SubResource( 3 )
+
+[node name="CanvasNotMoney" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="not_enought_money" type="Sprite" parent="CanvasNotMoney"]
+visible = false
+modulate = Color( 1, 1, 1, 0.666667 )
+position = Vector2( 518.055, 341.529 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasNotMoney"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 4 )
 
 [node name="Buttons" type="CenterContainer" parent="."]
 editor/display_folded = true
@@ -183,65 +248,233 @@ margin_right = 1330.0
 margin_bottom = 544.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 308.0
 
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_right = 230.0
 margin_bottom = 100.0
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 11 )
 
 [node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 104.0
 margin_right = 230.0
 margin_bottom = 204.0
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
 
 [node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 208.0
 margin_right = 230.0
 margin_bottom = 308.0
-texture_normal = ExtResource( 12 )
+texture_normal = ExtResource( 13 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-editor/display_folded = true
-margin_left = 124.0
-margin_top = 207.0
-margin_right = 889.0
-margin_bottom = 601.0
+anchor_right = 1.0
+margin_left = 124.24
+margin_top = 207.36
+margin_right = -134.76
+margin_bottom = 601.36
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 100.0
-margin_bottom = 428.0
+margin_bottom = 860.0
 
-[node name="TextureButton" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+[node name="Base_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_right = 100.0
 margin_bottom = 140.0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 14 )
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/TextureButton"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
 margin_left = 149.784
 margin_top = 2.45547
-margin_right = 189.784
-margin_bottom = 16.4555
-custom_fonts/font = SubResource( 4 )
+margin_right = 408.784
+margin_bottom = 34.4555
+custom_fonts/font = SubResource( 5 )
 text = "Base Rocket "
 
-[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+[node name="Buy_button" type="TextureButton" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
+margin_left = 351.868
+margin_top = 48.5963
+margin_right = 498.868
+margin_bottom = 105.596
+texture_normal = ExtResource( 15 )
+expand = true
+
+[node name="Descriptions" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
+margin_left = 119.085
+margin_top = 44.1056
+margin_right = 310.085
+margin_bottom = 131.106
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 30%
+HP - 3
+Bullet - No"
+
+[node name="Pro_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
 margin_top = 144.0
 margin_right = 100.0
 margin_bottom = 284.0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 16 )
 
-[node name="TextureButton3" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
+margin_left = 149.784
+margin_top = 4.165
+margin_right = 460.784
+margin_bottom = 36.165
+custom_fonts/font = SubResource( 5 )
+text = "Master Rocket "
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
+margin_left = 360.0
+margin_top = 49.0
+margin_right = 569.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 7 )
+text = "350$"
+
+[node name="Descriptions2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
+margin_left = 119.085
+margin_top = 36.896
+margin_right = 324.085
+margin_bottom = 123.896
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 40%
+HP - 3
+Bullet - No"
+
+[node name="Master_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
 margin_top = 288.0
 margin_right = 100.0
 margin_bottom = 428.0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 17 )
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
+margin_left = 149.784
+margin_top = 0.735
+margin_right = 408.784
+margin_bottom = 32.735
+custom_fonts/font = SubResource( 5 )
+text = "PRo  rocket"
+
+[node name="BuyButton3" type="Button" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
+margin_left = 360.0
+margin_top = 47.28
+margin_right = 569.0
+margin_bottom = 106.28
+custom_fonts/font = SubResource( 7 )
+text = "470$"
+
+[node name="Descriptions3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
+margin_left = 119.085
+margin_top = 35.216
+margin_right = 311.085
+margin_bottom = 122.216
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 43%
+HP - 4
+Bullet - No"
+
+[node name="Gold_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+margin_top = 432.0
+margin_right = 100.0
+margin_bottom = 572.0
+texture_normal = ExtResource( 18 )
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
+margin_left = 149.784
+margin_top = 5.375
+margin_right = 408.784
+margin_bottom = 37.375
+custom_fonts/font = SubResource( 5 )
+text = "gold  rocket"
+
+[node name="BuyButton4" type="Button" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
+margin_left = 360.0
+margin_top = 54.98
+margin_right = 569.0
+margin_bottom = 113.98
+custom_fonts/font = SubResource( 7 )
+text = "550$"
+
+[node name="Descriptions4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
+margin_left = 119.085
+margin_top = 44.386
+margin_right = 311.085
+margin_bottom = 131.386
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 50%
+HP - 5
+Bullet - Yes"
+
+[node name="Node_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+margin_top = 576.0
+margin_right = 100.0
+margin_bottom = 716.0
+texture_normal = ExtResource( 19 )
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
+margin_left = 149.784
+margin_top = 5.195
+margin_right = 408.784
+margin_bottom = 37.195
+custom_fonts/font = SubResource( 5 )
+text = "node rocket"
+
+[node name="Descriptions5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
+margin_left = 119.085
+margin_top = 40.236
+margin_right = 311.085
+margin_bottom = 127.236
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 53%
+HP - 5
+Bullet - Yes"
+
+[node name="3D_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+margin_top = 720.0
+margin_right = 100.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 20 )
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/3D_Rocket"]
+margin_left = 149.784
+margin_top = 9.475
+margin_right = 408.784
+margin_bottom = 41.475
+custom_fonts/font = SubResource( 5 )
+text = "3d rocket"
+
+[node name="Descriptions6" type="Label" parent="ScrollContainer/VBoxContainer/3D_Rocket"]
+margin_left = 119.085
+margin_top = 47.016
+margin_right = 329.085
+margin_bottom = 134.016
+custom_fonts/font = SubResource( 6 )
+text = "Speed - 65 %
+HP - 6
+Bullet - Yes"
+
+[node name="Comming Soon!" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
+visible = false
+margin_top = 864.0
+margin_right = 100.0
+margin_bottom = 1004.0
+texture_normal = ExtResource( 20 )
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Comming Soon!"]
+margin_left = 149.784
+margin_top = 9.475
+margin_right = 408.784
+margin_bottom = 41.475
+custom_fonts/font = SubResource( 5 )
+text = "Coming Soon"
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "Change"
-anims/Change = SubResource( 5 )
+anims/Change = SubResource( 9 )
 [connection signal="pressed" from="Elements/HomeButton" to="." method="_on_HomeButton_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton" to="." method="_on_BuyButton_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3" to="." method="_on_BuyButton3_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Gold_Rocket/BuyButton4" to="." method="_on_BuyButton4_pressed"]

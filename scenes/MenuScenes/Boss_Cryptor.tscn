@@ -1,0 +1,103 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_00_delay-0.05s.png" type="Texture" id=1]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_01_delay-0.05s.png" type="Texture" id=2]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_02_delay-0.05s.png" type="Texture" id=3]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_03_delay-0.05s.png" type="Texture" id=4]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_04_delay-0.05s.png" type="Texture" id=5]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_05_delay-0.05s.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_06_delay-0.05s.png" type="Texture" id=7]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_07_delay-0.05s.png" type="Texture" id=8]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_08_delay-0.05s.png" type="Texture" id=9]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_09_delay-0.05s.png" type="Texture" id=10]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_10_delay-0.05s.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_11_delay-0.05s.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_12_delay-0.05s.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_13_delay-0.05s.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_14_delay-0.05s.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_15_delay-0.05s.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_16_delay-0.05s.png" type="Texture" id=17]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_17_delay-0.05s.png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_18_delay-0.05s.png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/game/boss/cryptor/frame_19_delay-0.05s.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "BossAnimation"
+length = 0.8
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0300371, 0.0565747, 0.0825144, 0.109867, 0.140717, 0.168834, 0.197347, 0.226718, 0.255311, 0.284456, 0.315223, 0.349716, 0.39034, 0.42924, 0.469868, 0.510108, 0.550067, 0.59931, 0.651751, 0.700314 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 12, 13, 14, 14, 15, 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "AnimBoss"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BossBody:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.999825 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -452.57 ), Vector2( 0, -167.95 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ExitBoss"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BossBody:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -167.95 ), Vector2( 0, -456.08 ) ]
+}
+
+[node name="Boss_Cryptor" type="Node2D"]
+
+[node name="BossBody" type="KinematicBody2D" parent="."]
+position = Vector2( 0, -398.454 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossBody"]
+visible = false
+
+[node name="BossArea" type="Area2D" parent="BossBody"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BossBody/BossArea"]
+position = Vector2( 486.789, 302.194 )
+scale = Vector2( 0.43371, 0.43371 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BossBody/BossArea"]
+autoplay = "BossAnimation"
+anims/BossAnimation = SubResource( 2 )
+
+[node name="AnimationBoss" type="AnimationPlayer" parent="."]
+autoplay = "AnimBoss"
+anims/AnimBoss = SubResource( 3 )
+anims/ExitBoss = SubResource( 4 )

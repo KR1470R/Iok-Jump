@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_energy = 0.0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 12.6
+fog_enabled = true
+fog_sun_amount = 0.54
+fog_depth_begin = 2119.9
+fog_depth_end = 2022.0
+fog_transmit_curve = 1.46409
+fog_height_curve = 1.68179
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource( 1 )

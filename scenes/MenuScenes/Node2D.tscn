@@ -1,25 +1,23 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://scripts/TimerCanvas.gd" type="Script" id=2]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://FX/Shader.tscn" type="PackedScene" id=4]
-[ext_resource path="res://texture_ui/game/Background/Stars.png" type="Texture" id=5]
-[ext_resource path="res://scripts/Stars.gd" type="Script" id=6]
-[ext_resource path="res://scripts/Coin2.gd" type="Script" id=7]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=8]
-[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=9]
-[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=10]
-[ext_resource path="res://MenuScenes/CoinShine.tscn" type="PackedScene" id=11]
-[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=12]
-[ext_resource path="res://MenuScenes/meteor.tscn" type="PackedScene" id=13]
-[ext_resource path="res://MenuScenes/ufo.tscn" type="PackedScene" id=14]
-[ext_resource path="res://texture_ui/game/indecators/heart_icon.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=16]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=17]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=18]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=19]
-[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://texture_ui/game/Background/Stars.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Stars.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Coin2.gd" type="Script" id=6]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=7]
+[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=8]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=9]
+[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=10]
+[ext_resource path="res://MenuScenes/meteor.tscn" type="PackedScene" id=11]
+[ext_resource path="res://MenuScenes/ufo.tscn" type="PackedScene" id=12]
+[ext_resource path="res://texture_ui/game/indecators/heart_icon.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=17]
+[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -113,6 +111,11 @@ tracks/0/keys = {
 "values": [ Vector2( 36, 36 ), Vector2( -6, 4 ), Vector2( 16, 20 ), Vector2( -19.47, 7.73 ), Vector2( 6, -9 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=11]
+size = 50
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
 [node name="Main" type="Node2D"]
 position = Vector2( 36, 36 )
 script = ExtResource( 1 )
@@ -130,13 +133,6 @@ custom_fonts/font = SubResource( 1 )
 [node name="TimerCount" type="AnimationPlayer" parent="TimerCanvas"]
 anims/Counter = SubResource( 2 )
 
-[node name="Shader" type="TextureRect" parent="."]
-editor/display_folded = true
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="WorldEnvironment" parent="Shader" instance=ExtResource( 4 )]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 editor/display_folded = true
 margin_left = -35.0
@@ -147,13 +143,13 @@ margin_bottom = 564.0
 [node name="Stars" type="Sprite" parent="TextureRect"]
 position = Vector2( 140.257, 540.983 )
 scale = Vector2( 1.1461, 1 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Stars2" type="Sprite" parent="TextureRect"]
 position = Vector2( 877.245, -518.825 )
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false
@@ -161,8 +157,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Coin2" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin2"]
 visible = false
@@ -178,11 +173,11 @@ shape = SubResource( 3 )
 [node name="coin" type="Sprite" parent="Coin2/AreaCoin"]
 position = Vector2( 375.843, -102.321 )
 scale = Vector2( 1.27933, 1.27933 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="Rocket2" type="KinematicBody2D" parent="."]
 position = Vector2( -0.809, -77.254 )
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="Area2D" type="Area2D" parent="Rocket2"]
 
@@ -192,42 +187,44 @@ polygon = PoolVector2Array( 454.892, 360.736, 453.07, 395.439, 473.284, 378.186,
 
 [node name="character" type="Sprite" parent="Rocket2/Area2D"]
 position = Vector2( 499.296, 353.577 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="ShineAnimation" type="AnimationPlayer" parent="Rocket2/Area2D"]
 anims/Shine = SubResource( 4 )
 
-[node name="CoinShine" parent="Rocket2" instance=ExtResource( 11 )]
-position = Vector2( 12.0587, 7.53662 )
-
-[node name="Explosion" parent="Rocket2" instance=ExtResource( 12 )]
+[node name="Explosion" parent="Rocket2" instance=ExtResource( 10 )]
 position = Vector2( -3.4342, 34.1276 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rocket2"]
 position = Vector2( -0.709999, 0 )
+build_mode = 1
 polygon = PoolVector2Array( 454.892, 360.736, 453.156, 393.238, 472.089, 376.829, 486.447, 376.198, 487.71, 376.514, 479.978, 399.865, 485.816, 400.339, 505.941, 400.916, 514.69, 400.812, 508.379, 375.409, 523.841, 375.567, 544.037, 395.132, 540.049, 360.32, 526.013, 346.963, 517.493, 318.721, 506.922, 293.792, 499.07, 284.66, 496.861, 284.502, 488.656, 299.648, 482.345, 313.06, 476.823, 328.838, 474.456, 346.982 )
 
 [node name="ColorRect" type="ColorRect" parent="Rocket2/CollisionPolygon2D2"]
-visible = false
 margin_left = 453.0
 margin_top = 283.0
 margin_right = 547.0
 margin_bottom = 423.0
-color = Color( 1, 0, 0, 0.498039 )
+color = Color( 0, 1, 0.0392157, 0 )
 
 [node name="AnimationFlicker" type="AnimationPlayer" parent="Rocket2/CollisionPolygon2D2"]
 anims/Flicker = SubResource( 5 )
 
-[node name="Meteors" parent="." instance=ExtResource( 13 )]
+[node name="Meteors" parent="." instance=ExtResource( 11 )]
 position = Vector2( 87.9782, -54.5318 )
+z_index = -3
 
-[node name="UFO" parent="." instance=ExtResource( 14 )]
+[node name="NodeMeteor" type="Node" parent="."]
+
+[node name="NodeBoss" type="Node" parent="."]
+
+[node name="UFO" parent="." instance=ExtResource( 12 )]
 position = Vector2( 12.771, -3.4874 )
 
 [node name="coin" type="Sprite" parent="."]
 position = Vector2( 39.5627, 41.4613 )
 scale = Vector2( 1.38824, 1.38824 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="LabelCoin" type="Label" parent="."]
 margin_left = 82.101
@@ -240,7 +237,7 @@ text = "0"
 [node name="heart_icon" type="Sprite" parent="."]
 position = Vector2( 39.563, 127.433 )
 scale = Vector2( 1.31155, 1.32081 )
-texture = ExtResource( 15 )
+texture = ExtResource( 13 )
 
 [node name="LabelHealth" type="Label" parent="."]
 margin_left = 83.167
@@ -258,38 +255,55 @@ anims/ShakeHealth = SubResource( 9 )
 [node name="ShakeScreen" type="AnimationPlayer" parent="."]
 anims/ScreenShake = SubResource( 10 )
 
+[node name="LabelScore2" type="Label" parent="."]
+margin_left = 357.736
+margin_top = 18.8902
+margin_right = 547.736
+margin_bottom = 103.89
+custom_fonts/font = SubResource( 11 )
+text = "Score"
+
+[node name="LabelScore" type="Label" parent="LabelScore2"]
+margin_left = 193.942
+margin_top = 0.247803
+margin_right = 354.942
+margin_bottom = 85.2478
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.945098, 0.0784314, 0.0784314, 1 )
+text = "0"
+
 [node name="Hud" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Gamepad" type="Node2D" parent="Hud"]
 
 [node name="Left" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 8.64988, 460.134 )
 scale = Vector2( 1.30951, 1.30951 )
-normal = ExtResource( 16 )
+normal = ExtResource( 14 )
 
 [node name="Right" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 213.59, 464.324 )
 scale = Vector2( 1.26115, 1.26115 )
-normal = ExtResource( 17 )
+normal = ExtResource( 15 )
 
 [node name="Boost" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 946.894, 432.596 )
 rotation = 1.58365
 scale = Vector2( 1.25231, 1.25231 )
-normal = ExtResource( 18 )
+normal = ExtResource( 16 )
 
 [node name="Pause" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 920.185, 23.8 )
 scale = Vector2( 1.49756, 1.49756 )
-normal = ExtResource( 19 )
+normal = ExtResource( 17 )
 
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 20 )]
+[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 18 )]
 visible = false
 [connection signal="animation_finished" from="TimerCanvas/TimerCount" to="TimerCanvas" method="_on_TimerCount_animation_finished"]
 [connection signal="area_entered" from="Coin2/AreaCoin" to="." method="_on_AreaCoin_area_entered"]
-[connection signal="area_entered" from="Rocket2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Rocket2/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="Hud/Gamepad/Left" to="Rocket2" method="_on_Left_pressed"]
 [connection signal="released" from="Hud/Gamepad/Left" to="Rocket2" method="_on_Left_released"]

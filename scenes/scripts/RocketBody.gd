@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var speed = 2
-
+var score = 0
 var TOP = Vector2(0, -1)
 var BOTTOM = Vector2(0, 1)
 var LEFT = Vector2(-1, 0)
@@ -22,7 +22,7 @@ func _physics_process(delta):
     
     if self.position.y != get_viewport().size.y - 50:
         move_and_collide(BOTTOM*4)
-		
+        score += 0.001
     if Input.is_action_pressed("ui_down") or touch_down:
         move_and_collide(BOTTOM * speed)
         
@@ -34,13 +34,14 @@ func _physics_process(delta):
 #        rotation+=1*delta
     if Input.is_action_pressed("ui_accept") or touch_boost:
         move_and_collide(TOP * 5)
+        score += 0.010
     if self.position.x >= 520 or self.position.x <= -500:
-        print("test")
         self.position = Vector2(200,-100)
     if self.position.y >= 300:
         self.position = Vector2(200,-100)
     if self.position.y < -320:
         self.position = Vector2(200,-100)
+    
     pass
 	
 func _on_Left_pressed():
