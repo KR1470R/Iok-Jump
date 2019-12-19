@@ -17,12 +17,26 @@ var touch_left = false
 var touch_right = false 
 var touch_boost = false 
 var touch_down = false 
+var choose_rocket_path = 'user://used_ship.txt'
 
 func _physics_process(delta):
-    
+    var choose_rocket = File.new()
+    choose_rocket.open(choose_rocket_path,File.READ)
+    var rocket = choose_rocket.get_line()
     if self.position.y != get_viewport().size.y - 50:
         move_and_collide(BOTTOM*4)
-        score += 0.001
+        if rocket == '1':
+           score += 0.001
+        if rocket == '2':
+           score += 0.010
+        if rocket == '3':
+            score += 0.015
+        if rocket == '4':
+            score += 0.017
+        if rocket == '5':
+            score += 0.020
+        if rocket == '6':
+            score += 0.025
     if Input.is_action_pressed("ui_down") or touch_down:
         move_and_collide(BOTTOM * speed)
         
@@ -41,7 +55,6 @@ func _physics_process(delta):
         self.position = Vector2(200,-100)
     if self.position.y < -320:
         self.position = Vector2(200,-100)
-    
     pass
 	
 func _on_Left_pressed():

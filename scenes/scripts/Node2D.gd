@@ -3,12 +3,37 @@ extends Node2D
 var health = 4
 var coin = 0
 var score = 0
-
+var speed = 1
 var other_coins
 var filepath = "user://coins.txt"
 var filepath_score = "user://last_score.txt"
+var choose_rocket_path = 'user://used_ship.txt'
 var write_num
 onready var expl 
+
+var base_rocket = load("res://texture_ui/game/characters/character.png")
+var master_rocket = load("res://texture_ui/game/characters/pro_rocket_2.png")
+var pro_rocket = load("res://texture_ui/game/characters/master_rockey_3.png")
+var gold_rocket = load("res://texture_ui/game/characters/gold_rocket_4.png")
+var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
+var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
+
+func _ready():
+	var choose_rocket = File.new()
+	choose_rocket.open(choose_rocket_path,File.READ)
+	var rocket = choose_rocket.get_line()
+	if rocket == '1':
+		$Rocket2/Area2D/character.set_texture(base_rocket)
+	if rocket == '2':
+		$Rocket2/Area2D/character.set_texture(master_rocket)	
+	if rocket == '3':
+		$Rocket2/Area2D/character.set_texture(pro_rocket)	
+	if rocket == '4':
+		$Rocket2/Area2D/character.set_texture(gold_rocket)
+	if rocket == '5':
+		$Rocket2/Area2D/character.set_texture(node_rocket)
+	if rocket == '6':
+		$Rocket2/Area2D/character.set_texture(threed_rocket)
 func _process(delta):
 	score = get_node("Rocket2").get("score")
 	$LabelScore2/LabelScore.text = str(score)

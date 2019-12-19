@@ -173,6 +173,8 @@ func _on_BuyButton1_pressed():
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
 				lst = str(lst)+'2'
+				$CanvasSucPursh/suc_push.show()
+				$CanvasSucPursh/AnimationPlayer.play("New Anim")
 				save()
 			else:
 				$CanvasNotMoney/not_enought_money.show()
@@ -208,6 +210,8 @@ func _on_BuyButton3_pressed():
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
 				lst = str(lst) + '3'
+				$CanvasSucPursh/suc_push.show()
+				$CanvasSucPursh/AnimationPlayer.play("New Anim")
 				save()
 			else:
 				$CanvasNotMoney/not_enought_money.show()
@@ -243,6 +247,8 @@ func _on_BuyButton4_pressed():
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
 				lst = str(lst) + '4'
+				$CanvasSucPursh/suc_push.show()
+				$CanvasSucPursh/AnimationPlayer.play("New Anim")
 				save()
 			else:
 				$CanvasNotMoney/not_enought_money.show()
@@ -278,6 +284,8 @@ func _on_BuyButton5_pressed():
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
 				lst = str(lst)+'5'
+				$CanvasSucPursh/suc_push.show()
+				$CanvasSucPursh/AnimationPlayer.play("New Anim")
 				save()
 			else:
 				$CanvasNotMoney/not_enought_money.show()
@@ -312,6 +320,8 @@ func _on_BuyButton6_pressed():
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
 				lst = str(lst)+'6'
+				$CanvasSucPursh/suc_push.show()
+				$CanvasSucPursh/AnimationPlayer.play("New Anim")
 				save()
 			else:
 				$CanvasNotMoney/not_enought_money.show()
