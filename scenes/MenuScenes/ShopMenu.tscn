@@ -133,7 +133,7 @@ font_data = ExtResource( 4 )
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -473,7 +473,7 @@ text = "Coming Soon"
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "Change"
-anims/Change = SubResource( 9 )
+anims/Change = SubResource( 8 )
 [connection signal="pressed" from="Elements/HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton" to="." method="_on_BuyButton_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3" to="." method="_on_BuyButton3_pressed"]

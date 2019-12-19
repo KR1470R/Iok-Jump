@@ -29,14 +29,14 @@ func _ready():
 	file_ships_w = File.new()
 	file_ships_w.open(ships,File.READ)
 	lst = file_ships_w.get_line()
-	if lst == '':
-		write_ship2 = File.new()
-		write_ship2.open(ships,File.WRITE)
-		write_ship2.seek_end()
-		write_ship2.store_line(str(list))
-		write_ship2.close()		
-	else:
-		pass
+#	if lst == '':
+#		write_ship2 = File.new()
+#		write_ship2.open(ships,File.WRITE)
+#		write_ship2.seek_end()
+#		write_ship2.store_line(str(list))
+#		write_ship2.close()		
+#	else:
+#		pass
 		
 	for_read_use_ship = File.new()
 	for_read_use_ship.open(used_ship,File.READ)
@@ -45,7 +45,7 @@ func _ready():
 	
 		
 	## Condition for ships buttons
-	if int(lst[4]) == 1:
+	if int(lst[4]) == 01:
 		if ship_condition == '2':
 			print('test')
 			$ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton.set_text('Used')
@@ -54,7 +54,7 @@ func _ready():
 	else:
 		$ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton.set_text('350$')	
 		
-	if int(lst[7]) == 1:
+	if int(lst[7]) == 01:
 		if ship_condition == '3':
 			print('test')
 			$ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3.set_text('Used')
@@ -63,7 +63,7 @@ func _ready():
 	else:
 		$ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3.set_text('470$')	
 		
-	if int(lst[10]) == 1:
+	if int(lst[10]) == 01:
 		if ship_condition == '4':
 			print('test')
 			$ScrollContainer/VBoxContainer/Gold_Rocket/BuyButton4.set_text('Used')
@@ -93,7 +93,8 @@ func save():
 	var file_ws = File.new()
 	file_ws.open(ships,File.WRITE)
 	file_ws.seek_end()
-	file_ws.store_line(str(list))
+	file_ws.store_line(str(lst))
+	print(lst)
 	file_ws.close()
 	
 	file_w = File.new()
@@ -113,6 +114,7 @@ func _on_BuyButton_pressed():
 			file_used_ship.open(used_ship,File.WRITE)
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(2))
+			file_used_ship.close()
 			$ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton.set_text('Used')
 		else:
 			if coins >= 350:
@@ -120,10 +122,8 @@ func _on_BuyButton_pressed():
 				$ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton.set_text('Use')
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
-				list.remove(1)
-				list.insert(1,1)
+				lst = lst.insert(4,'two').replace('two','1')
 				save()
-				print(list)
 			else:
 				$CanvasNotMoney/not_enought_money.show()
 				$CanvasNotMoney/AnimationPlayer.play("New Anim")
@@ -139,6 +139,7 @@ func _on_BuyButton3_pressed():
 			file_used_ship.open(used_ship,File.WRITE)
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(3))
+			file_used_ship.close()
 			$ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3.set_text('Used')
 		else:
 			if coins >= 470:
@@ -146,10 +147,8 @@ func _on_BuyButton3_pressed():
 				$ScrollContainer/VBoxContainer/Master_Rocket/BuyButton3.set_text('Use')
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
-				list.remove(1)
-				list.insert(2,1)
+				lst = lst.insert(7,'three').replace('three','1')
 				save()
-				print(list)
 			else:
 				$CanvasNotMoney/not_enought_money.show()
 				$CanvasNotMoney/AnimationPlayer.play("New Anim")
@@ -166,6 +165,7 @@ func _on_BuyButton4_pressed():
 			file_used_ship.open(used_ship,File.WRITE)
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(4))
+			file_used_ship.close()
 			$ScrollContainer/VBoxContainer/Gold_Rocket/BuyButton4.set_text('Used')
 		else:
 			if coins >= 550:
@@ -173,10 +173,8 @@ func _on_BuyButton4_pressed():
 				$ScrollContainer/VBoxContainer/Gold_Rocket/BuyButton4.set_text('Use')
 				res = int(coins) - int(cina_first)
 				$Elements/LabelCoin.text = str(res)
-				list.remove(3)
-				list.insert(3,1)
+				lst = lst.insert(10,'four').replace('four','1')
 				save()
-				print(list)
 			else:
 				$CanvasNotMoney/not_enought_money.show()
 				$CanvasNotMoney/AnimationPlayer.play("New Anim")
