@@ -1,19 +1,5 @@
-  extends Node2D
-###Comming soon
-#var delay = 5
-#onready var timer = get_node("Timer")
-#func _ready():
-##	timer = Timer.new()
-#	timer.set_wait_timer(1)
-#	timer.start()
-##	timer.connect("timeout",self,"on_timeout_complete")
-##
-##	set_process_input(true)
-##	set_process(true)
-#
-#
-#func _on_Timer_timeout():
-#	delay -= 1
+extends Node2D
+
 var health = 4
 var coin = 0
 var score = 0

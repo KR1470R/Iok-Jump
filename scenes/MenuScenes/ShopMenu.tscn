@@ -124,11 +124,11 @@ tracks/1/keys = {
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 25
 font_data = ExtResource( 4 )
 
@@ -296,7 +296,7 @@ margin_left = 360.0
 margin_top = 47.64
 margin_right = 569.0
 margin_bottom = 106.64
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "Used"
 
 [node name="Descriptions" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
@@ -304,7 +304,7 @@ margin_left = 119.085
 margin_top = 44.1056
 margin_right = 310.085
 margin_bottom = 131.106
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 30%
 HP - 3
 Bullet - No"
@@ -328,7 +328,7 @@ margin_left = 360.0
 margin_top = 49.0
 margin_right = 569.0
 margin_bottom = 108.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "350$"
 
 [node name="Descriptions2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
@@ -336,7 +336,7 @@ margin_left = 119.085
 margin_top = 36.896
 margin_right = 324.085
 margin_bottom = 123.896
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 40%
 HP - 3
 Bullet - No"
@@ -360,7 +360,7 @@ margin_left = 360.0
 margin_top = 47.28
 margin_right = 569.0
 margin_bottom = 106.28
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "470$"
 
 [node name="Descriptions3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
@@ -368,7 +368,7 @@ margin_left = 119.085
 margin_top = 35.216
 margin_right = 311.085
 margin_bottom = 122.216
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 43%
 HP - 4
 Bullet - No"
@@ -392,7 +392,7 @@ margin_left = 360.0
 margin_top = 54.98
 margin_right = 569.0
 margin_bottom = 113.98
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "550$"
 
 [node name="Descriptions4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
@@ -400,7 +400,7 @@ margin_left = 119.085
 margin_top = 44.386
 margin_right = 311.085
 margin_bottom = 131.386
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 50%
 HP - 5
 Bullet - Yes"
@@ -424,7 +424,7 @@ margin_left = 360.0
 margin_top = 55.25
 margin_right = 569.0
 margin_bottom = 114.25
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "650$"
 
 [node name="Descriptions5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
@@ -432,7 +432,7 @@ margin_left = 119.085
 margin_top = 40.236
 margin_right = 311.085
 margin_bottom = 127.236
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 53%
 HP - 5
 Bullet - Yes"
@@ -456,7 +456,7 @@ margin_left = 360.0
 margin_top = 54.48
 margin_right = 569.0
 margin_bottom = 113.48
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "780$"
 
 [node name="Descriptions6" type="Label" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
@@ -464,7 +464,7 @@ margin_left = 119.085
 margin_top = 47.016
 margin_right = 329.085
 margin_bottom = 134.016
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Speed - 65 %
 HP - 6
 Bullet - Yes"
