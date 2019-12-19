@@ -1,15 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/LoseMenu.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=4]
-[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=5]
-[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-size = 45
-font_data = ExtResource( 3 )
+[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=4]
+[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 67
@@ -39,64 +34,40 @@ tracks/0/keys = {
 "values": [ Vector2( 165.38, -99.464 ), Vector2( 165.38, 38.75 ), Vector2( 165.38, 17.14 ), Vector2( 165.38, 50.69 ), Vector2( 165.38, 39.59 ), Vector2( 165.38, 39.59 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("PlayAg:rect_position")
+tracks/1/path = NodePath("CenterContainer:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 1.3 ),
-"transitions": PoolRealArray( 4.14106, 1 ),
+"times": PoolRealArray( 0.5, 1.4 ),
+"transitions": PoolRealArray( 1.07177, 1 ),
 "update": 0,
-"values": [ Vector2( 333.021, 48.744 ), Vector2( 333.021, 118.474 ) ]
+"values": [ Vector2( 346.749, 650 ), Vector2( 346.749, 224.21 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("PlayAg:rect_scale")
+tracks/2/path = NodePath("Ur Score:rect_position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.5, 1.3 ),
+"times": PoolRealArray( 0.5, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 0.01 ), Vector2( 1, 1.09 ) ]
+"values": [ Vector2( 323.792, 639 ), Vector2( 323.792, 178.147 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CenterContainer:rect_position")
+tracks/3/path = NodePath("Labelscore:rect_position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0.5, 1.4 ),
-"transitions": PoolRealArray( 1.07177, 1 ),
-"update": 0,
-"values": [ Vector2( 346.749, 650 ), Vector2( 346.749, 224.21 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Ur Score:rect_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0.5, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 323.792, 605.308 ), Vector2( 323.792, 178.147 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Labelscore:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0.5, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 623.792, 605.05 ), Vector2( 623.792, 177.13 ) ]
+"values": [ Vector2( 623.792, 639.54 ), Vector2( 623.792, 177.13 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -112,22 +83,12 @@ margin_right = -0.49823
 texture = ExtResource( 2 )
 expand = true
 
-[node name="PlayAg" type="Label" parent="."]
-margin_left = 333.021
-margin_top = 48.744
-margin_right = 664.021
-margin_bottom = 95.744
-rect_scale = Vector2( 1, 0.01 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.698039, 1, 0.352941, 1 )
-text = "Play again?"
-
 [node name="Lose" type="Label" parent="."]
 anchor_bottom = 1.0
 margin_left = 165.38
-margin_top = -99.464
+margin_top = 38.75
 margin_right = 850.38
-margin_bottom = -560.464
+margin_bottom = -422.25
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.647059, 0.12549, 0.12549, 1 )
 text = "YOU DESTROYED! 
@@ -135,18 +96,18 @@ text = "YOU DESTROYED!
 
 [node name="Ur Score" type="Label" parent="."]
 margin_left = 323.792
-margin_top = 605.308
+margin_top = 639.0
 margin_right = 633.792
-margin_bottom = 647.308
+margin_bottom = 681.0
 rect_pivot_offset = Vector2( -187.272, 542.052 )
 custom_fonts/font = SubResource( 3 )
 text = "Your Score "
 
 [node name="Labelscore" type="Label" parent="."]
 margin_left = 623.792
-margin_top = 605.05
+margin_top = 639.54
 margin_right = 653.792
-margin_bottom = 647.05
+margin_bottom = 681.54
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "0"
@@ -159,23 +120,17 @@ margin_bottom = 1002.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 40.0
+margin_top = 63.0
 margin_right = 270.0
-margin_bottom = 352.0
+margin_bottom = 289.0
 custom_constants/separation = 26
 alignment = 1
 
-[node name="Play" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+[node name="Restart" type="TextureButton" parent="CenterContainer/VBoxContainer"]
 margin_right = 230.0
 margin_bottom = 100.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
-
-[node name="Restart" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-margin_top = 126.0
-margin_right = 230.0
-margin_bottom = 226.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 5 )
 
 [node name="Restart" type="Label" parent="CenterContainer/VBoxContainer/Restart"]
 margin_left = 17.9327
@@ -187,15 +142,14 @@ custom_colors/font_color = Color( 0, 0.976471, 0.2, 1 )
 text = "restart"
 
 [node name="Exit" type="TextureButton" parent="CenterContainer/VBoxContainer"]
-margin_top = 252.0
+margin_top = 126.0
 margin_right = 230.0
-margin_bottom = 352.0
+margin_bottom = 226.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "AnimLose"
 anims/AnimLose = SubResource( 4 )
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
