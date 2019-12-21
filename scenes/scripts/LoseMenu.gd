@@ -2,7 +2,14 @@ extends Control
 var filepath_lastscore = "user://last_score.txt"
 var last_score
 var filepath_score = "user://score.txt"
+var boost_cheker = "user://boost_cheker.txt"
 func _ready():
+	var fr = File.new()
+	fr.open(boost_cheker,File.WRITE)
+	fr.seek_end()
+	fr.store_line(str('False'))
+	fr.close()
+	
 	var file_r = File.new()
 	file_r.open(filepath_lastscore,File.READ)
 	last_score = file_r.get_line()

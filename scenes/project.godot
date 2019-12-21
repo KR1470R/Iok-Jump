@@ -24,6 +24,8 @@ config/icon="res://icon.png"
 [autoload]
 
 MainMenu="*res://scripts/MenuScripts/MainMenu.gd"
+speed_name="*res://scripts/KinematicBody2D.gd"
+RocketBody="*res://scripts/RocketBody.gd"
 
 [display]
 

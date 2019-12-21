@@ -1,5 +1,4 @@
 extends KinematicBody2D
-
 var speed = 2
 var score = 0
 var TOP = Vector2(0, -1)
@@ -18,7 +17,7 @@ var touch_right = false
 var touch_boost = false 
 var touch_down = false 
 var choose_rocket_path = 'user://used_ship.txt'
-
+var boost_cheker = "user://boost_cheker.txt"
 func _physics_process(delta):
     var choose_rocket = File.new()
     choose_rocket.open(choose_rocket_path,File.READ)
@@ -48,7 +47,18 @@ func _physics_process(delta):
 #        rotation+=1*delta
     if Input.is_action_pressed("ui_accept") or touch_boost:
         move_and_collide(TOP * 5)
-        score += 0.010
+        if rocket == '1':	
+           score += 0.010
+        if rocket == '2':
+           score += 0.013        
+        if rocket == '3':
+           score += 0.016        
+        if rocket == '4':
+           score += 0.020        
+        if rocket == '5':
+           score += 0.023        
+        if rocket == '6':
+           score += 0.026
     if self.position.x >= 520 or self.position.x <= -500:
         self.position = Vector2(200,-100)
     if self.position.y >= 300:
@@ -65,8 +75,11 @@ func _on_Right_pressed():
 
 
 func _on_Boost_pressed():
+	var f = File.new()
+	f.open(boost_cheker,File.WRITE)
+	f.seek_end()
+	f.store_line(str(true))
 	touch_boost = true
-
 
 
 func _on_Left_released():
@@ -78,6 +91,10 @@ func _on_Right_released():
 
 
 func _on_Boost_released():
+	var f2 = File.new()
+	f2.open(boost_cheker,File.WRITE)
+	f2.seek_end()
+	f2.store_line(str(false))
 	touch_boost = false
 
 

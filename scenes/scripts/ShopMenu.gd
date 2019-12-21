@@ -80,7 +80,7 @@ func _ready():
 
 #
 	if '6' in lst:
-		if ship_condition == '5':
+		if ship_condition == '6':
 			$ScrollContainer/VBoxContainer/THREED_Rocket/BuyButton6.set_text('Used')
 		else:
 			$ScrollContainer/VBoxContainer/THREED_Rocket/BuyButton6.set_text('Use')

@@ -27,15 +27,15 @@ size = 60
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("coin_icon:position")
@@ -110,8 +110,7 @@ tracks/5/keys = {
 "values": [ Vector2( -503.852, 522.388 ), Vector2( -503.852, 585.338 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "New Anim"
+[sub_resource type="Animation" id=5]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("not_enought_money:position")
@@ -138,7 +137,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "New Anim"
 length = 3.0
 tracks/0/type = "value"
@@ -166,19 +165,19 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -247,7 +246,7 @@ margin_left = -495.0
 margin_top = 585.338
 margin_right = -357.0
 margin_bottom = 630.338
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 text = "With Love-
 Ajva Community."
 
@@ -274,12 +273,12 @@ margin_left = -400.0
 margin_top = 2.12
 margin_right = -360.0
 margin_bottom = 54.12
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 script = ExtResource( 9 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
-anims/AnimatonElements = SubResource( 3 )
+anims/AnimatonElements = SubResource( 4 )
 
 [node name="CanvasNotMoney" type="CanvasLayer" parent="."]
 
@@ -292,7 +291,7 @@ script = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasNotMoney"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 4 )
+"anims/New Anim" = SubResource( 5 )
 
 [node name="CanvasSucPursh" type="CanvasLayer" parent="."]
 
@@ -305,7 +304,7 @@ script = ExtResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasSucPursh"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 9 )
+"anims/New Anim" = SubResource( 6 )
 
 [node name="Buttons" type="CenterContainer" parent="."]
 editor/display_folded = true
@@ -356,7 +355,7 @@ margin_left = 149.784
 margin_top = 2.45547
 margin_right = 408.784
 margin_bottom = 34.4555
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Base Rocket "
 
 [node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
@@ -364,7 +363,7 @@ margin_left = 360.0
 margin_top = 47.64
 margin_right = 569.0
 margin_bottom = 106.64
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Used"
 
 [node name="Descriptions" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
@@ -372,7 +371,7 @@ margin_left = 119.085
 margin_top = 44.1056
 margin_right = 310.085
 margin_bottom = 131.106
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 30%
 HP - 3
 Bullet - No"
@@ -388,7 +387,7 @@ margin_left = 149.784
 margin_top = 4.165
 margin_right = 460.784
 margin_bottom = 36.165
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Master Rocket "
 
 [node name="BuyButton1" type="Button" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
@@ -396,7 +395,7 @@ margin_left = 360.0
 margin_top = 49.0
 margin_right = 569.0
 margin_bottom = 108.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "350$"
 
 [node name="Descriptions2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
@@ -404,7 +403,7 @@ margin_left = 119.085
 margin_top = 36.896
 margin_right = 324.085
 margin_bottom = 123.896
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 40%
 HP - 3
 Bullet - No"
@@ -420,7 +419,7 @@ margin_left = 149.784
 margin_top = 0.735
 margin_right = 408.784
 margin_bottom = 32.735
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "PRo  rocket"
 
 [node name="BuyButton3" type="Button" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
@@ -428,7 +427,7 @@ margin_left = 360.0
 margin_top = 47.28
 margin_right = 569.0
 margin_bottom = 106.28
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "470$"
 
 [node name="Descriptions3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
@@ -436,7 +435,7 @@ margin_left = 119.085
 margin_top = 35.216
 margin_right = 311.085
 margin_bottom = 122.216
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 43%
 HP - 4
 Bullet - No"
@@ -452,7 +451,7 @@ margin_left = 149.784
 margin_top = 5.375
 margin_right = 408.784
 margin_bottom = 37.375
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "gold  rocket"
 
 [node name="BuyButton4" type="Button" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
@@ -460,7 +459,7 @@ margin_left = 360.0
 margin_top = 54.98
 margin_right = 569.0
 margin_bottom = 113.98
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "550$"
 
 [node name="Descriptions4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
@@ -468,7 +467,7 @@ margin_left = 119.085
 margin_top = 44.386
 margin_right = 311.085
 margin_bottom = 131.386
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 50%
 HP - 5
 Bullet - Yes"
@@ -484,7 +483,7 @@ margin_left = 149.784
 margin_top = 5.195
 margin_right = 408.784
 margin_bottom = 37.195
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "node rocket"
 
 [node name="BuyButton5" type="Button" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
@@ -492,7 +491,7 @@ margin_left = 360.0
 margin_top = 55.25
 margin_right = 569.0
 margin_bottom = 114.25
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "650$"
 
 [node name="Descriptions5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
@@ -500,7 +499,7 @@ margin_left = 119.085
 margin_top = 40.236
 margin_right = 311.085
 margin_bottom = 127.236
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 53%
 HP - 5
 Bullet - Yes"
@@ -516,7 +515,7 @@ margin_left = 149.784
 margin_top = 9.475
 margin_right = 408.784
 margin_bottom = 41.475
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "3d rocket"
 
 [node name="BuyButton6" type="Button" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
@@ -524,7 +523,7 @@ margin_left = 360.0
 margin_top = 54.48
 margin_right = 569.0
 margin_bottom = 113.48
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "780$"
 
 [node name="Descriptions6" type="Label" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
@@ -532,7 +531,7 @@ margin_left = 119.085
 margin_top = 47.016
 margin_right = 329.085
 margin_bottom = 134.016
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Speed - 65 %
 HP - 6
 Bullet - Yes"
@@ -550,12 +549,12 @@ margin_left = 149.784
 margin_top = 9.475
 margin_right = 408.784
 margin_bottom = 41.475
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Coming Soon"
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "Change"
-anims/Change = SubResource( 8 )
+anims/Change = SubResource( 10 )
 [connection signal="pressed" from="Elements/HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Base_Rocket/BuyButton" to="." method="_on_BuyButton_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Pro_Rocket/BuyButton1" to="." method="_on_BuyButton1_pressed"]

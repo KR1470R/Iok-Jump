@@ -6,16 +6,16 @@
 [ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=4]
 [ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 67
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 38
 font_data = ExtResource( 3 )
 
@@ -89,7 +89,7 @@ margin_left = 165.38
 margin_top = 38.75
 margin_right = 850.38
 margin_bottom = -422.25
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.647059, 0.12549, 0.12549, 1 )
 text = "YOU DESTROYED! 
 "
@@ -100,7 +100,7 @@ margin_top = 639.0
 margin_right = 633.792
 margin_bottom = 681.0
 rect_pivot_offset = Vector2( -187.272, 542.052 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Your Score "
 
 [node name="Labelscore" type="Label" parent="."]
@@ -108,7 +108,7 @@ margin_left = 623.792
 margin_top = 639.54
 margin_right = 653.792
 margin_bottom = 681.54
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "0"
 
@@ -137,7 +137,7 @@ margin_left = 17.9327
 margin_top = 30.5264
 margin_right = 215.933
 margin_bottom = 69.5264
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0.976471, 0.2, 1 )
 text = "restart"
 

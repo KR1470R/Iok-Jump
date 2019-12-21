@@ -18,7 +18,7 @@ var gold_rocket = load("res://texture_ui/game/characters/gold_rocket_4.png")
 var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
 var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 
-func _ready():
+func _ready():	
 	var choose_rocket = File.new()
 	choose_rocket.open(choose_rocket_path,File.READ)
 	var rocket = choose_rocket.get_line()
@@ -36,7 +36,7 @@ func _ready():
 		$Rocket2/Area2D/character.set_texture(threed_rocket)
 func _process(delta):
 	score = get_node("Rocket2").get("score")
-	$LabelScore2/LabelScore.text = str(score)
+	$Hud/LabelScore2/LabelScore.text = str(score)  
 #	if int(score) % 10 == 0:
 #		if float(score) / 10.000:
 #			var get_boss = load("res://MenuScenes/Boss_Cryptor.tscn")
@@ -48,7 +48,7 @@ func _on_Area2D_body_entered(area):
 	get_node("ShakeLabel").queue("ShakeHealth")
 	$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
 	health -= 1
-	$LabelHealth.text = str(health)
+	$Hud/LabelHealth.text = str(health)
 	if health <= 0:
 		print("U lose")
 		get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
@@ -79,13 +79,12 @@ func _on_AreaCoin_area_entered(area):
 	$Rocket2/CollisionPolygon2D2/AnimationFlicker.queue("Flicker")
 	print("+1")
 	coin += 1
-	$LabelCoin.text = str(coin)
+	$Hud/LabelCoin.text = str(coin)
 	$Coin2.hide()
 	if int(score) % 4 == 0:
 		var new_meteor = load("res://MenuScenes/meteor.tscn")
 		var meteor = new_meteor.instance()
 		get_node("NodeMeteor").add_child(meteor)                            
-
 	pass
 #		new_coin.instance()
 #		new_coin.add_child(new_coin)

@@ -19,15 +19,15 @@ size = 60
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=2]
 size = 25
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("coin_icon:position")
@@ -66,8 +66,7 @@ tracks/2/keys = {
 "values": [ Vector2( -417.268, 540 ), Vector2( -417.268, 20 ), Vector2( -417.268, 100.07 ), Vector2( -417.268, 40 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "RocketShake"
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("heart-logo-png-17:position")
@@ -154,13 +153,13 @@ tracks/6/keys = {
 "values": [ 0.0, -1.0, 1.0, -2.0, 2.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -2.0, 2.0, -1.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 50
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -250,7 +249,7 @@ margin_top = 522.388
 margin_right = -357.0
 margin_bottom = 567.388
 rect_pivot_offset = Vector2( 52.2, 14.68 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 2 )
 text = "With Love-
 Ajva Community. "
 
@@ -269,21 +268,21 @@ margin_left = -395.1
 margin_top = -2.37
 margin_right = -355.1
 margin_bottom = 49.63
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "0"
 script = ExtResource( 9 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
-anims/AnimatonElements = SubResource( 3 )
-anims/RocketShake = SubResource( 4 )
+anims/AnimatonElements = SubResource( 4 )
+anims/RocketShake = SubResource( 5 )
 
 [node name="BestScore" type="Label" parent="Elements"]
 margin_left = -100.0
 margin_top = 178.158
 margin_right = 266.0
 margin_bottom = 285.158
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "
 "
 script = ExtResource( 10 )
@@ -317,7 +316,7 @@ texture_normal = ExtResource( 13 )
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "AnimtionElements"
-anims/AnimtionElements = SubResource( 6 )
+anims/AnimtionElements = SubResource( 7 )
 [connection signal="pressed" from="Elements/Rocket_icon" to="." method="_on_Rocket_icon_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Shop" to="." method="_on_Shop_pressed"]
