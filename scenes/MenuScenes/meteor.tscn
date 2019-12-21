@@ -1,26 +1,25 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://scripts/meteor.gd" type="Script" id=1]
-[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=2]
-[ext_resource path="res://texture_ui/game/meteors/3.png" type="Texture" id=3]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_00_delay-0-removebg-preview.png" type="Texture" id=4]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_01_delay-0-removebg-preview.png" type="Texture" id=5]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_02_delay-0-removebg-preview.png" type="Texture" id=6]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_03_delay-0-removebg-preview.png" type="Texture" id=7]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_04_delay-0-removebg-preview.png" type="Texture" id=8]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_05_delay-0-removebg-preview.png" type="Texture" id=9]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_06_delay-0-removebg-preview.png" type="Texture" id=10]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_08_delay-0-removebg-preview.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_11_delay-0-removebg-preview.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_14_delay-0-removebg-preview.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_18_delay-0-removebg-preview.png" type="Texture" id=14]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_19_delay-0-removebg-preview.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_22_delay-0-removebg-preview.png" type="Texture" id=16]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_24_delay-0-removebg-preview.png" type="Texture" id=17]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_27_delay-0-removebg-preview.png" type="Texture" id=18]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_28_delay-0-removebg-preview.png" type="Texture" id=19]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_29_delay-0-removebg-preview.png" type="Texture" id=20]
-[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_30_delay-0-removebg-preview.png" type="Texture" id=21]
+[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://texture_ui/game/meteors/3.png" type="Texture" id=2]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_00_delay-0-removebg-preview.png" type="Texture" id=3]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_01_delay-0-removebg-preview.png" type="Texture" id=4]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_02_delay-0-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_03_delay-0-removebg-preview.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_04_delay-0-removebg-preview.png" type="Texture" id=7]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_05_delay-0-removebg-preview.png" type="Texture" id=8]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_06_delay-0-removebg-preview.png" type="Texture" id=9]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_08_delay-0-removebg-preview.png" type="Texture" id=10]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_11_delay-0-removebg-preview.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_14_delay-0-removebg-preview.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_18_delay-0-removebg-preview.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_19_delay-0-removebg-preview.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_22_delay-0-removebg-preview.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_24_delay-0-removebg-preview.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_27_delay-0-removebg-preview.png" type="Texture" id=17]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_28_delay-0-removebg-preview.png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_29_delay-0-removebg-preview.png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_30_delay-0-removebg-preview.png" type="Texture" id=20]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 24.5042
@@ -28,7 +27,7 @@ height = 44.3968
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "meteor",
 "speed": 10.0
@@ -51,11 +50,10 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 0, -236.91 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="Shape1" type="CollisionShape2D" parent="KinematicBody2D"]
 editor/display_folded = true
@@ -65,7 +63,7 @@ shape = SubResource( 1 )
 [node name="1" type="Sprite" parent="KinematicBody2D/Shape1"]
 visible = false
 position = Vector2( -4.16996, -54.5721 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 editor/display_folded = true
