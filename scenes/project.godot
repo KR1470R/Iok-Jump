@@ -29,8 +29,8 @@ RocketBody="*res://scripts/RocketBody.gd"
 
 [display]
 
-window/size/resizable=false
-window/size/fullscreen=true
+window/size/width=1920
+window/size/height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/intended_usage/framebuffer_allocation.mobile=3

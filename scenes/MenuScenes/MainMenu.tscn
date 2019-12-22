@@ -15,16 +15,16 @@
 [ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
+size = 120
 use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 25
+size = 50
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 50
+size = 120
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=4]
@@ -37,9 +37,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
-"transitions": PoolRealArray( 0.999999, 1, 1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -456.008, -76.462 ), Vector2( -456.008, 55.178 ), Vector2( -456.008, 16.958 ), Vector2( -456.008, 28.968 ) ]
+"values": [ Vector2( -415.178, -105.512 ), Vector2( -415.178, 55.178 ), Vector2( -415.178, 39.543 ), Vector2( -415.178, 62.128 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("LabelCoin:rect_position")
@@ -51,7 +51,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -395.1, -104.03 ), Vector2( -395.1, 26.79 ), Vector2( -395.1, -8.4 ), Vector2( -395.1, -2.37 ) ]
+"values": [ Vector2( -329.28, -158.47 ), Vector2( -329.28, 26.79 ), Vector2( -329.28, -8.4 ), Vector2( -329.28, -2.18 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Rocket_icon:rect_position")
@@ -63,7 +63,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -417.268, 540 ), Vector2( -417.268, 20 ), Vector2( -417.268, 100.07 ), Vector2( -417.268, 40 ) ]
+"values": [ Vector2( -235.502, 540 ), Vector2( -258.884, 20 ), Vector2( -258.884, 175.049 ), Vector2( -265.039, 144.516 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -75,10 +75,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 1.8, 1.8 ),
-"transitions": PoolRealArray( 4, 4.43828, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.8 ),
+"transitions": PoolRealArray( 0.267943, 1, 0.406126, 1 ),
 "update": 0,
-"values": [ Vector2( -311.035, 167.065 ), Vector2( -391.565, 126.175 ), Vector2( -309.215, 165.235 ), Vector2( -283.415, 224.085 ) ]
+"values": [ Vector2( -30.3564, 454.061 ), Vector2( -220.089, 289.528 ), Vector2( -220.089, 289.528 ), Vector2( -35.7568, 456.744 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("heart-logo-png-18:position")
@@ -87,10 +87,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1.2, 1.5 ),
-"transitions": PoolRealArray( 4, 4, 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 1.2, 1.5 ),
+"transitions": PoolRealArray( 0.233258, 1, 1, 0.554785 ),
 "update": 0,
-"values": [ Vector2( -311.035, 167.065 ), Vector2( -311.035, 50.465 ), Vector2( -286.879, 218.014 ), Vector2( -294.015, 224.095 ) ]
+"values": [ Vector2( -31.2588, 454.061 ), Vector2( -132.937, 175.01 ), Vector2( -132.937, 175.01 ), Vector2( -39.5928, 457.177 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("heart-logo-png-19:position")
@@ -99,10 +99,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.7, 1.2 ),
-"transitions": PoolRealArray( 4, 4, 1 ),
+"times": PoolRealArray( 0, 0.9, 1.3 ),
+"transitions": PoolRealArray( 0.287175, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -311.035, 167.065 ), Vector2( -239.905, 115.865 ), Vector2( -295.385, 219.715 ) ]
+"values": [ Vector2( -35.7715, 455.866 ), Vector2( 5.57617, 261.168 ), Vector2( -38.1719, 458.878 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("heart-logo-png-17:rotation_degrees")
@@ -111,8 +111,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3, 1.8 ),
-"transitions": PoolRealArray( 4, 4, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.8 ),
+"transitions": PoolRealArray( 0.420448, 4, 1 ),
 "update": 0,
 "values": [ 0.0, -28.1, 0.0 ]
 }
@@ -135,7 +135,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.7, 1.2 ),
+"times": PoolRealArray( 0, 0.9, 1.3 ),
 "transitions": PoolRealArray( 4, 4, 1 ),
 "update": 0,
 "values": [ 0.0, 28.1, 0.0 ]
@@ -154,7 +154,7 @@ tracks/6/keys = {
 }
 
 [sub_resource type="DynamicFont" id=6]
-size = 50
+size = 80
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 4 )
@@ -170,7 +170,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1100, 269.05 ), Vector2( 588, 279.25 ) ]
+"values": [ Vector2( 2000, 384.96 ), Vector2( 1200, 384.96 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Elements/BestScore:rect_position")
@@ -182,7 +182,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 550, 178.158 ), Vector2( -100, 178.158 ) ]
+"values": [ Vector2( 1500, 290 ), Vector2( 331.35, 290 ) ]
 }
 
 [node name="MainMenu" type="Control"]
@@ -206,68 +206,67 @@ margin_bottom = 173.973
 expand = true
 
 [node name="BackForLabel" type="Sprite" parent="Elements"]
-position = Vector2( 170.111, 73.28 )
-scale = Vector2( 1.24542, 1.09997 )
+position = Vector2( 850.852, 137.293 )
+scale = Vector2( 2.46114, 2.01444 )
 texture = ExtResource( 3 )
 
 [node name="WelcomeLabel" type="Label" parent="Elements"]
-margin_left = 4.17217
-margin_top = 41.15
-margin_right = 335.172
-margin_bottom = 103.15
+margin_left = 525.345
+margin_top = 76.8258
+margin_right = 1185.34
+margin_bottom = 198.826
 custom_fonts/font = SubResource( 1 )
 text = "Iok Jump"
 align = 1
 valign = 1
 
 [node name="coin_icon" type="Sprite" parent="Elements"]
-position = Vector2( -456.008, 28.968 )
-scale = Vector2( 1.71697, 1.71697 )
+position = Vector2( -415.178, -65.3395 )
+scale = Vector2( 2.89149, 2.89149 )
 texture = ExtResource( 5 )
 
 [node name="heart-logo-png-17" type="Sprite" parent="Elements"]
 visible = false
-position = Vector2( -283.415, 224.085 )
-scale = Vector2( 0.0557472, 0.0557472 )
+position = Vector2( -30.3564, 454.061 )
+scale = Vector2( 0.0764941, 0.0764941 )
 texture = ExtResource( 6 )
 
 [node name="heart-logo-png-18" type="Sprite" parent="Elements"]
 visible = false
-position = Vector2( -294.015, 224.095 )
-scale = Vector2( 0.0557472, 0.0557472 )
+position = Vector2( -31.2588, 454.061 )
+scale = Vector2( 0.0802281, 0.0802281 )
 texture = ExtResource( 6 )
 
 [node name="heart-logo-png-19" type="Sprite" parent="Elements"]
 visible = false
-position = Vector2( -295.385, 219.715 )
-scale = Vector2( 0.0557472, 0.0557472 )
+position = Vector2( -35.7715, 455.866 )
+scale = Vector2( 0.0750334, 0.0750334 )
 texture = ExtResource( 6 )
 
 [node name="WithLove" type="Label" parent="Elements"]
-margin_left = -500.0
-margin_top = 522.388
-margin_right = -357.0
-margin_bottom = 567.388
+margin_left = -498.124
+margin_top = 947.055
+margin_right = -212.124
+margin_bottom = 1034.05
 rect_pivot_offset = Vector2( 52.2, 14.68 )
 custom_fonts/font = SubResource( 2 )
 text = "With Love-
 Ajva Community. "
 
 [node name="Rocket_icon" type="TextureButton" parent="Elements"]
-margin_left = -417.268
-margin_top = 40.0
-margin_right = -27.268
-margin_bottom = 613.0
-rect_rotation = 1.0
+margin_left = -241.347
+margin_top = 410.0
+margin_right = 422.653
+margin_bottom = 1386.0
 rect_pivot_offset = Vector2( 175.44, 264.2 )
 texture_normal = ExtResource( 8 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
-margin_left = -395.1
-margin_top = -2.37
-margin_right = -355.1
-margin_bottom = 49.63
+margin_left = -329.28
+margin_top = -112.155
+margin_right = -239.28
+margin_bottom = 9.84501
 custom_fonts/font = SubResource( 3 )
 text = "0"
 script = ExtResource( 9 )
@@ -278,40 +277,41 @@ anims/AnimatonElements = SubResource( 4 )
 anims/RocketShake = SubResource( 5 )
 
 [node name="BestScore" type="Label" parent="Elements"]
-margin_left = -100.0
-margin_top = 178.158
-margin_right = 266.0
-margin_bottom = 285.158
+margin_left = 331.35
+margin_top = 290.0
+margin_right = 1301.35
+margin_bottom = 497.0
 custom_fonts/font = SubResource( 6 )
-text = "
-"
+text = "a"
 script = ExtResource( 10 )
 
 [node name="Buttons" type="CenterContainer" parent="."]
-margin_left = 588.0
-margin_top = 279.25
-margin_right = 818.0
-margin_bottom = 587.25
+margin_left = 1200.0
+margin_top = 384.96
+margin_right = 1734.0
+margin_bottom = 1062.96
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-margin_right = 230.0
-margin_bottom = 308.0
+margin_left = 32.0
+margin_top = 20.0
+margin_right = 502.0
+margin_bottom = 658.0
 
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_right = 230.0
-margin_bottom = 100.0
+margin_right = 470.0
+margin_bottom = 210.0
 texture_normal = ExtResource( 11 )
 
 [node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 104.0
-margin_right = 230.0
-margin_bottom = 204.0
+margin_top = 214.0
+margin_right = 470.0
+margin_bottom = 424.0
 texture_normal = ExtResource( 12 )
 
 [node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 208.0
-margin_right = 230.0
-margin_bottom = 308.0
+margin_top = 428.0
+margin_right = 470.0
+margin_bottom = 638.0
 texture_normal = ExtResource( 13 )
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
