@@ -1,6 +1,7 @@
 extends Node2D
 
-var health = 4
+var health = 119
+var damage = 15
 var coin = 0
 var score = 0
 var speed = 1
@@ -10,6 +11,7 @@ var filepath_score = "user://last_score.txt"
 var choose_rocket_path = 'user://used_ship.txt'
 var write_num
 onready var expl 
+onready var health_bar = $Hud/HealthProgress
 
 var base_rocket = load("res://texture_ui/game/characters/character.png")
 var master_rocket = load("res://texture_ui/game/characters/pro_rocket_2.png")
@@ -18,7 +20,12 @@ var gold_rocket = load("res://texture_ui/game/characters/gold_rocket_4.png")
 var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
 var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 
+export (Color) var green_color = Color.green
+export (Color) var yellow_color = Color.yellow
+export (Color) var red_color = Color.red
+
 func _ready():	
+	health_bar.value = health
 	var choose_rocket = File.new()
 	choose_rocket.open(choose_rocket_path,File.READ)
 	var rocket = choose_rocket.get_line()
@@ -42,36 +49,47 @@ func _process(delta):
 #			var get_boss = load("res://MenuScenes/Boss_Cryptor.tscn")
 #			var cryptor = get_boss.instance()
 #			get_node("NodeBoss").add_child(cryptor)
+	if health_bar.value <= 30:
+		get_node("Hud/HealthProgress/AnimationPlayer").queue('New Anim')
 func _on_Area2D_body_entered(area): 
 #	file.open(filepath, File.WRITE)
-	get_node("ShakeScreen").queue("ScreenShake")
-	get_node("ShakeLabel").queue("ShakeHealth")
-	$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
-	health -= 1
-	$Hud/LabelHealth.text = str(health)
-	if health <= 0:
-		print("U lose")
-		get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
-		self.hide()
-		var file_r = File.new()
-		file_r.open(filepath,File.READ)
-		other_coins = file_r.get_line()
-		file_r.close()
-		write_num = int(other_coins) + int(coin)
-		
-		var file_w = File.new()
-		file_w.open(filepath,File.WRITE)
-		file_w.seek_end()
-		file_w.store_line(str(write_num))
-		file_w.close()
-		
-		var file_score_w = File.new()
-		file_score_w.open(filepath_score,File.WRITE)
-		file_score_w.seek_end()
-		file_score_w.store_line(str(score))
-		file_score_w.close()
-#		file.store_var(coin)
-#		file.close()
+	if score >= 0.050:
+		get_node("ShakeScreen").queue("ScreenShake")
+		get_node("ShakeLabel").queue("ShakeHealth")
+		$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
+		health = health - damage
+		health_bar.value = health
+		if health_bar.value <= 70 and health_bar.value >= 51:
+			health_bar.tint_progress = yellow_color
+		elif health_bar.value <= 50:
+			health_bar.tint_progress = red_color
+		elif health_bar.value >= 71:
+			health_bar.tint_progress = green_color
+		if health <= 0:
+			print("U lose")
+			get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
+			self.hide()
+			var file_r = File.new()
+			file_r.open(filepath,File.READ)
+			other_coins = file_r.get_line()
+			file_r.close()
+			write_num = int(other_coins) + int(coin)
+			
+			var file_w = File.new()
+			file_w.open(filepath,File.WRITE)
+			file_w.seek_end()
+			file_w.store_line(str(write_num))
+			file_w.close()
+			
+			var file_score_w = File.new()
+			file_score_w.open(filepath_score,File.WRITE)
+			file_score_w.seek_end()
+			file_score_w.store_line(str(score))
+			file_score_w.close()
+	#		file.store_var(coin)
+	#		file.close()
+	else:
+		pass
 
 func _on_AreaCoin_area_entered(area):
 	get_node("ShakeLabel").queue("Shake")

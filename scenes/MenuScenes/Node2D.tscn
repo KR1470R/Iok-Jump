@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://scripts/TimerCanvas.gd" type="Script" id=2]
@@ -16,8 +16,11 @@
 [ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=14]
 [ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=15]
 [ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=16]
-[ext_resource path="res://texture_ui/game/indecators/heart_icon.png" type="Texture" id=17]
-[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=17]
+[ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/game/indecators/heart_icon.png" type="Texture" id=20]
+[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -91,25 +94,13 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 3.03143, 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 82.101, 32.022 ), Vector2( 82.101, 4.422 ), Vector2( 82.101, 21.162 ), Vector2( 82.101, 11.332 ), Vector2( 82.101, 14.787 ) ]
+"values": [ Vector2( 82.101, 106.937 ), Vector2( 82.101, 74.962 ), Vector2( 82.101, 135.602 ), Vector2( 82.101, 102.882 ), Vector2( 82.101, 114.987 ) ]
 }
 
 [sub_resource type="Animation" id=9]
 length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Hud/LabelHealth:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 4.14106, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 83.167, 114.002 ), Vector2( 83.167, 94.162 ), Vector2( 83.167, 108.272 ), Vector2( 83.167, 98.502 ), Vector2( 83.167, 103.952 ) ]
-}
 
 [sub_resource type="Animation" id=10]
 tracks/0/type = "value"
@@ -129,9 +120,37 @@ tracks/0/keys = {
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=12]
-size = 50
-font_data = ExtResource( 3 )
+[sub_resource type="Animation" id=14]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "New Anim (2)"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_over")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.0705882, 0, 1, 1 ), Color( 1, 0, 0.921569, 1 ), Color( 0.584314, 0, 1, 1 ), Color( 0, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=13]
 size = 50
@@ -205,7 +224,6 @@ scale = Vector2( 1.27933, 1.27933 )
 texture = ExtResource( 7 )
 
 [node name="Rocket2" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -0.809, -77.254 )
 script = ExtResource( 8 )
 
@@ -283,9 +301,9 @@ normal = ExtResource( 16 )
 
 [node name="LabelCoin" type="Label" parent="Hud"]
 margin_left = 82.101
-margin_top = 14.787
+margin_top = 114.987
 margin_right = 122.1
-margin_bottom = 66.787
+margin_bottom = 166.987
 custom_fonts/font = SubResource( 11 )
 text = "0"
 
@@ -294,25 +312,37 @@ position = Vector2( -42.5383, 26.6743 )
 scale = Vector2( 1.38824, 1.38824 )
 texture = ExtResource( 7 )
 
-[node name="LabelHealth" type="Label" parent="Hud"]
-margin_left = 83.167
-margin_top = 114.002
-margin_right = 123.168
-margin_bottom = 166.002
-size_flags_horizontal = 0
-custom_fonts/font = SubResource( 12 )
-text = "3"
+[node name="HealthProgress" type="TextureProgress" parent="Hud"]
+margin_left = 37.3743
+margin_top = 35.988
+margin_right = 222.374
+margin_bottom = 72.988
+max_value = 120.0
+value = 100.0
+texture_under = ExtResource( 17 )
+texture_over = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+tint_over = Color( 0.0705882, 0, 1, 1 )
+tint_progress = Color( 0.113725, 1, 0, 1 )
+nine_patch_stretch = true
 
-[node name="heart_icon" type="Sprite" parent="Hud/LabelHealth"]
-position = Vector2( -43.604, 23.481 )
-scale = Vector2( 1.31155, 1.32081 )
-texture = ExtResource( 17 )
+[node name="Heart" type="Sprite" parent="Hud/HealthProgress"]
+position = Vector2( -8.60843, 16.5792 )
+texture = ExtResource( 20 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hud/HealthProgress"]
+"anims/New Anim" = SubResource( 14 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Hud/HealthProgress"]
+autoplay = "New Anim (2)"
+"anims/New Anim (2)" = SubResource( 15 )
 
 [node name="LabelScore2" type="Label" parent="Hud"]
-margin_left = 393.736
-margin_top = 54.8902
-margin_right = 583.736
-margin_bottom = 139.89
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -95.0
+margin_right = 95.0
+margin_bottom = 84.9998
 custom_fonts/font = SubResource( 13 )
 text = "Score"
 
@@ -327,7 +357,7 @@ text = "0"
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 18 )]
+[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 21 )]
 visible = false
 [connection signal="animation_finished" from="TimerCanvas/TimerCount" to="TimerCanvas" method="_on_TimerCount_animation_finished"]
 [connection signal="area_entered" from="Coin2/AreaCoin" to="." method="_on_AreaCoin_area_entered"]

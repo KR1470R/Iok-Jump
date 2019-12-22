@@ -47,7 +47,7 @@ func _physics_process(delta):
 #        rotation+=1*delta
     if Input.is_action_pressed("ui_accept") or touch_boost:
         move_and_collide(TOP * 5)
-        if rocket == '1':	
+        if rocket == '1':
            score += 0.010
         if rocket == '2':
            score += 0.013        
