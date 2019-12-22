@@ -1,6 +1,6 @@
 extends Node2D
 
-var health = 119
+var health = 134
 var damage = 15
 var coin = 0
 var score = 0
@@ -53,43 +53,40 @@ func _process(delta):
 		get_node("Hud/HealthProgress/AnimationPlayer").queue('New Anim')
 func _on_Area2D_body_entered(area): 
 #	file.open(filepath, File.WRITE)
-	if score >= 0.050:
-		get_node("ShakeScreen").queue("ScreenShake")
-		get_node("ShakeLabel").queue("ShakeHealth")
-		$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
-		health = health - damage
-		health_bar.value = health
-		if health_bar.value <= 70 and health_bar.value >= 51:
-			health_bar.tint_progress = yellow_color
-		elif health_bar.value <= 50:
-			health_bar.tint_progress = red_color
-		elif health_bar.value >= 71:
-			health_bar.tint_progress = green_color
-		if health <= 0:
-			print("U lose")
-			get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
-			self.hide()
-			var file_r = File.new()
-			file_r.open(filepath,File.READ)
-			other_coins = file_r.get_line()
-			file_r.close()
-			write_num = int(other_coins) + int(coin)
+	health = health - damage
+	health_bar.value = health
+	get_node("ShakeScreen").queue("ScreenShake")
+	$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
+	if health_bar.value <= 70 and health_bar.value >= 51:
+		health_bar.tint_progress = yellow_color
+	elif health_bar.value <= 50:
+		health_bar.tint_progress = red_color
+	elif health_bar.value >= 71:
+		health_bar.tint_progress = green_color
+	if health <= 0:
+		print("U lose")
+		get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
+		self.hide()
+		var file_r = File.new()
+		file_r.open(filepath,File.READ)
+		other_coins = file_r.get_line()
+		file_r.close()
+		write_num = int(other_coins) + int(coin)
 			
-			var file_w = File.new()
-			file_w.open(filepath,File.WRITE)
-			file_w.seek_end()
-			file_w.store_line(str(write_num))
-			file_w.close()
+		var file_w = File.new()
+		file_w.open(filepath,File.WRITE)
+		file_w.seek_end()
+		file_w.store_line(str(write_num))
+		file_w.close()
 			
-			var file_score_w = File.new()
-			file_score_w.open(filepath_score,File.WRITE)
-			file_score_w.seek_end()
-			file_score_w.store_line(str(score))
-			file_score_w.close()
+		var file_score_w = File.new()
+		file_score_w.open(filepath_score,File.WRITE)
+		file_score_w.seek_end()
+		file_score_w.store_line(str(score))
+		file_score_w.close()
 	#		file.store_var(coin)
 	#		file.close()
-	else:
-		pass
+
 
 func _on_AreaCoin_area_entered(area):
 	get_node("ShakeLabel").queue("Shake")
