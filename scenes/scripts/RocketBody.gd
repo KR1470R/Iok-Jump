@@ -16,11 +16,11 @@ var touch_left = false
 var touch_right = false 
 var touch_boost = false 
 var touch_down = false 
-var choose_rocket_path = 'user://used_ship.txt'
-var boost_cheker = "user://boost_cheker.txt"
+var choose_rocket_path = 'user://used_ship.bin'
+var boost_cheker = "user://boost_cheker.bin"
 func _physics_process(delta):
     var choose_rocket = File.new()
-    choose_rocket.open(choose_rocket_path,File.READ)
+    choose_rocket.open_encrypted_with_pass(choose_rocket_path,File.READ,OS.get_unique_id())
     var rocket = choose_rocket.get_line()
     if self.position.y != get_viewport().size.y - 50:
         move_and_collide(BOTTOM*4)
@@ -76,7 +76,7 @@ func _on_Right_pressed():
 
 func _on_Boost_pressed():
 	var f = File.new()
-	f.open(boost_cheker,File.WRITE)
+	f.open_encrypted_with_pass(boost_cheker,File.WRITE, OS.get_unique_id())
 	f.seek_end()
 	f.store_line(str(true))
 	touch_boost = true
@@ -92,7 +92,7 @@ func _on_Right_released():
 
 func _on_Boost_released():
 	var f2 = File.new()
-	f2.open(boost_cheker,File.WRITE)
+	f2.open_encrypted_with_pass(boost_cheker,File.WRITE,OS.get_unique_id())
 	f2.seek_end()
 	f2.store_line(str(false))
 	touch_boost = false

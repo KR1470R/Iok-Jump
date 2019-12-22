@@ -6,9 +6,9 @@ var coin = 0
 var score = 0
 var speed = 1
 var other_coins
-var filepath = "user://coins.txt"
-var filepath_score = "user://last_score.txt"
-var choose_rocket_path = 'user://used_ship.txt'
+var filepath = "user://coins.bin"
+var filepath_score = "user://last_score.bin"
+var choose_rocket_path = 'user://used_ship.bin'
 var write_num
 onready var expl 
 onready var health_bar = $Hud/HealthProgress
@@ -27,7 +27,7 @@ export (Color) var red_color = Color.red
 func _ready():	
 	health_bar.value = health
 	var choose_rocket = File.new()
-	choose_rocket.open(choose_rocket_path,File.READ)
+	choose_rocket.open_encrypted_with_pass(choose_rocket_path,File.READ,OS.get_unique_id())
 	var rocket = choose_rocket.get_line()
 	if rocket == '1':
 		$Rocket2/Area2D/character.set_texture(base_rocket)
@@ -57,6 +57,7 @@ func _on_Area2D_body_entered(area):
 	health_bar.value = health
 	get_node("ShakeScreen").queue("ScreenShake")
 	$Rocket2/Explosion/AnimationFrames.queue("ExplosionFrames")
+	get_node("Hud/HealthProgress/AnimationPlayer").queue("New Anim (2)")
 	if health_bar.value <= 70 and health_bar.value >= 51:
 		health_bar.tint_progress = yellow_color
 	elif health_bar.value <= 50:
@@ -68,25 +69,24 @@ func _on_Area2D_body_entered(area):
 		get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
 		self.hide()
 		var file_r = File.new()
-		file_r.open(filepath,File.READ)
+		file_r.open_encrypted_with_pass(filepath,File.READ,OS.get_unique_id())
 		other_coins = file_r.get_line()
 		file_r.close()
-		write_num = int(other_coins) + int(coin)
+		write_num = int(other_coins) + int(coin) + 5000
 			
 		var file_w = File.new()
-		file_w.open(filepath,File.WRITE)
+		file_w.open_encrypted_with_pass(filepath,File.WRITE,OS.get_unique_id())
 		file_w.seek_end()
 		file_w.store_line(str(write_num))
 		file_w.close()
 			
 		var file_score_w = File.new()
-		file_score_w.open(filepath_score,File.WRITE)
+		file_score_w.open_encrypted_with_pass(filepath_score,File.WRITE,OS.get_unique_id())
 		file_score_w.seek_end()
 		file_score_w.store_line(str(score))
 		file_score_w.close()
 	#		file.store_var(coin)
-	#		file.close()
-
+	#		file.close
 
 func _on_AreaCoin_area_entered(area):
 	get_node("ShakeLabel").queue("Shake")
@@ -107,8 +107,5 @@ func _on_AreaCoin_area_entered(area):
 #    var score_path = $Rocket2
 #    get_node("LabelScore").text = str(score_path.score)
 #    print(score)
-
-
-
 
 

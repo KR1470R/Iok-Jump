@@ -3,19 +3,19 @@ extends KinematicBody2D
 var screenSize = Vector2(0,0)
 var rng = RandomNumberGenerator.new()
 var speed = 1
-var boost_cheker = "user://boost_cheker.txt"
-var path_rocket = "user://used_ship.txt"
+var boost_cheker = "user://boost_cheker.bin"
+var path_rocket = "user://used_ship.bin"
 
 var BOTTOM = Vector2(0,1)
 func _physics_process(delta):
 	rng.randomize()
 	
 	var fr = File.new()
-	fr.open(boost_cheker, File.READ)	
+	fr.open_encrypted_with_pass(boost_cheker,File.READ,OS.get_unique_id())
 	var string = fr.get_line()
 	
 	var fr2 = File.new()
-	fr2.open(path_rocket,File.READ)
+	fr2.open_encrypted_with_pass(path_rocket,File.READ,OS.get_unique_id())
 	var string_rocket = fr2.get_line()
 	
 	screenSize.x = get_viewport().get_visible_rect().size.x # Get Width

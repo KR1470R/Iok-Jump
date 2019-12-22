@@ -19,7 +19,7 @@
 [ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=17]
 [ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=18]
 [ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=19]
-[ext_resource path="res://texture_ui/game/indecators/heart_icon.png" type="Texture" id=20]
+[ext_resource path="res://texture_ui/game/healthbartext/gayka.png" type="Texture" id=20]
 [ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=1]
@@ -133,7 +133,7 @@ tracks/0/keys = {
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 resource_name = "New Anim"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -148,21 +148,19 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 resource_name = "New Anim (2)"
-length = 5.0
-loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:tint_over")
+tracks/0/path = NodePath("Heart:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2, 3, 4, 5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 4, 0.225313, 1 ),
 "update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 0.0705882, 0, 1, 1 ), Color( 1, 0, 0.921569, 1 ), Color( 0.584314, 0, 1, 1 ), Color( 0, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+"values": [ 0.0, 236.8, 60.0 ]
 }
 
 [sub_resource type="DynamicFont" id=13]
@@ -190,6 +188,7 @@ custom_fonts/font = SubResource( 1 )
 text = "1"
 
 [node name="ColorRect" type="ColorRect" parent="TimerCanvas"]
+visible = false
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -325,7 +324,6 @@ scale = Vector2( 1.38824, 1.38824 )
 texture = ExtResource( 7 )
 
 [node name="HealthProgress" type="TextureProgress" parent="Hud"]
-editor/display_folded = true
 margin_left = 37.374
 margin_top = 35.258
 margin_right = 222.374
@@ -335,20 +333,19 @@ value = 100.0
 texture_under = ExtResource( 17 )
 texture_over = ExtResource( 18 )
 texture_progress = ExtResource( 19 )
-tint_over = Color( 0.0705882, 0, 1, 1 )
+tint_over = Color( 0.270588, 0.352941, 0.392157, 1 )
 tint_progress = Color( 0.113725, 1, 0, 1 )
 nine_patch_stretch = true
 
 [node name="Heart" type="Sprite" parent="Hud/HealthProgress"]
-position = Vector2( -8.60843, 16.5792 )
+position = Vector2( -6.70559, 15.2756 )
+rotation = 4.13294
+scale = Vector2( 0.428669, 0.428669 )
 texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hud/HealthProgress"]
-"anims/New Anim" = SubResource( 14 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Hud/HealthProgress"]
-autoplay = "New Anim (2)"
-"anims/New Anim (2)" = SubResource( 15 )
+"anims/New Anim" = SubResource( 12 )
+"anims/New Anim (2)" = SubResource( 14 )
 
 [node name="LabelScore2" type="Label" parent="Hud"]
 anchor_left = 0.5

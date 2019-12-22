@@ -1,13 +1,13 @@
 extends Label
-var filepath_lastscore = "user://last_score.txt"
-var filepath_score = "user://score.txt"
+var filepath_lastscore = "user://last_score.bin"
+var filepath_score = "user://score.bin"
 var last_score
 var res
 var file_w
 var label_text = 'Best Score %s'
 func _ready():
 		var file_r2 = File.new()
-		file_r2.open(filepath_score,File.READ)
+		file_r2.open_encrypted_with_pass(filepath_score,File.READ,OS.get_unique_id())
 		var all_score = file_r2.get_line()
 		if all_score == '':
 			file_w = File.new()

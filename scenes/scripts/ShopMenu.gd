@@ -1,9 +1,9 @@
 extends Control
 var label
 var coin = 0
-var filepath = "user://coins.txt"
-var ships = "user://ships.txt"
-var used_ship = "user://used_ship.txt"
+var filepath = "user://coins.bin"
+var ships = "user://ships.bin"
+var used_ship = "user://used_ship.bin"
 var file
 var coins = 0
 var res
@@ -26,11 +26,11 @@ func _ready():
 #	OS.get_user_data_dir()
 	## Ship File
 	file_ships_w = File.new()
-	file_ships_w.open(ships,File.READ)
+	file_ships_w.open_encrypted_with_pass(ships,File.READ,OS.get_unique_id())
 	lst = file_ships_w.get_line()
 	if lst == '':
 		write_ship2 = File.new()
-		write_ship2.open(ships,File.WRITE)
+		write_ship2.open_encrypted_with_pass(ships,File.WRITE,OS.get_unique_id())
 		write_ship2.seek_end()
 		write_ship2.store_line(str(list))
 		write_ship2.close()		
@@ -38,7 +38,7 @@ func _ready():
 		pass
 		
 	for_read_use_ship = File.new()
-	for_read_use_ship.open(used_ship,File.READ)
+	for_read_use_ship.open_encrypted_with_pass(used_ship,File.READ,OS.get_unique_id())
 	ship_condition = for_read_use_ship.get_line()
 	print(ship_condition)
 	## Condition for ships buttons
@@ -90,11 +90,11 @@ func _ready():
 	###############
 	## Coin Files 
 	var file = File.new()
-	file.open(filepath,File.READ)
+	file.open_encrypted_with_pass(filepath,File.READ,OS.get_unique_id())
 	coins = file.get_line()
 	if coins == '':
 		file_w = File.new()
-		file_w.open(filepath,File.WRITE)
+		file_w.open_encrypted_with_pass(filepath,File.WRITE,OS.get_unique_id())
 		file_w.seek_end()
 		file_w.store_line(str(0))
 		file_w.close()
@@ -107,14 +107,14 @@ func _on_HomeButton_pressed():
 ## save all there
 func save():
 	var file_ws = File.new()
-	file_ws.open(ships,File.WRITE)
+	file_ws.open_encrypted_with_pass(ships,File.WRITE,OS.get_unique_id())
 	file_ws.seek_end()
 	file_ws.store_line(str(lst))
 	print(lst)
 	file_ws.close()
 	
 	file_w = File.new()
-	file_w.open(filepath,File.WRITE)
+	file_w.open_encrypted_with_pass(filepath,File.WRITE, OS.get_unique_id())
 	file_w.seek_end()
 	file_w.store_line(str(res))
 	file_w.close()
@@ -127,7 +127,7 @@ func _on_BuyButton_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE, OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(1))
 			file_used_ship.close()
@@ -152,7 +152,7 @@ func _on_BuyButton1_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE,OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(2))
 			file_used_ship.close()
@@ -189,7 +189,7 @@ func _on_BuyButton3_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE,OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(3))
 			file_used_ship.close()
@@ -226,7 +226,7 @@ func _on_BuyButton4_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE,OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(4))
 			file_used_ship.close()
@@ -263,7 +263,7 @@ func _on_BuyButton5_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE, OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(5))
 			file_used_ship.close()
@@ -299,7 +299,7 @@ func _on_BuyButton6_pressed():
 		if text == 'Use':
 			print(true)
 			file_used_ship = File.new()
-			file_used_ship.open(used_ship,File.WRITE)
+			file_used_ship.open_encrypted_with_pass(used_ship,File.WRITE,OS.get_unique_id())
 			file_used_ship.seek_end()
 			file_used_ship.store_line(str(6))
 			file_used_ship.close()

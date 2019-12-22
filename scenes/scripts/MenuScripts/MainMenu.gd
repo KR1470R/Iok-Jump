@@ -1,8 +1,8 @@
 extends Control
 var label
 var coin = 0
-var filepath = "user://coins.txt"
-var ships = "user://ships.txt"
+var filepath = "user://coins.bin"
+var ships = "user://ships.bin"
 var file
 var coins
 var res
@@ -21,19 +21,19 @@ var texture1 = false
 func _ready():
 #	OS.get_user_data_dir()
 	file_ships_w = File.new()
-	file_ships_w.open(ships,File.READ)
+	file_ships_w.open_encrypted_with_pass(ships,File.READ,OS.get_unique_id())
 	lst = file_ships_w.get_line()
-
+	
 	var file_ships = File.new()
-	file_ships.open(ships,File.READ)
+	file_ships.open_encrypted_with_pass(ships,File.READ,OS.get_unique_id())
 	file_ships.close()
 	
 	var file = File.new()
-	file.open(filepath,File.READ)
+	file.open_encrypted_with_pass(filepath,File.READ,OS.get_unique_id())
 	coins = file.get_line()
 	if coins == '':
 		file_w = File.new()
-		file_w.open(filepath,File.WRITE)
+		file_w.open_encrypted_with_pass(filepath,File.WRITE,OS.get_unique_id())
 		file_w.seek_end()
 		file_w.store_line(str(0))
 		file_w.close()
@@ -41,13 +41,13 @@ func _ready():
 	coins = int(coins)
 func save():
 	var file_ws = File.new()
-	file_ws.open(ships,File.WRITE)
+	file_ws.open_encrypted_with_pass(ships,File.WRITE,OS.get_unique_id())
 	file_ws.seek_end()
 	file_ws.store_line(str(list))
 	file_ws.close()
 	
 	file_w = File.new()
-	file_w.open(filepath,File.WRITE)
+	file_w.open_encrypted_with_pass(filepath,File.WRITE,OS.get_unique_id())
 	file_w.seek_end()
 	file_w.store_line(str(res))
 	file_w.close()
