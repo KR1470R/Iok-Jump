@@ -24,7 +24,7 @@ export (Color) var green_color = Color.green
 export (Color) var yellow_color = Color.yellow
 export (Color) var red_color = Color.red
 
-func _ready():	
+func _ready():
 	health_bar.value = health
 	var choose_rocket = File.new()
 	choose_rocket.open_encrypted_with_pass(choose_rocket_path,File.READ,OS.get_unique_id())
@@ -32,15 +32,16 @@ func _ready():
 	if rocket == '1':
 		$Rocket2/Area2D/character.set_texture(base_rocket)
 	if rocket == '2':
-		$Rocket2/Area2D/character.set_texture(master_rocket)	
+		$Rocket2/Area2D/character.set_texture(master_rocket)
 	if rocket == '3':
-		$Rocket2/Area2D/character.set_texture(pro_rocket)	
+		$Rocket2/Area2D/character.set_texture(pro_rocket)
 	if rocket == '4':
 		$Rocket2/Area2D/character.set_texture(gold_rocket)
 	if rocket == '5':
 		$Rocket2/Area2D/character.set_texture(node_rocket)
 	if rocket == '6':
 		$Rocket2/Area2D/character.set_texture(threed_rocket)
+		
 func _process(delta):
 	score = get_node("Rocket2").get("score")
 	$Hud/LabelScore2/LabelScore.text = str(score)  
@@ -66,14 +67,21 @@ func _on_Area2D_body_entered(area):
 		health_bar.tint_progress = green_color
 	if health <= 0:
 		print("U lose")
-		get_tree().change_scene("res://MenuScenes/LoseMenu.tscn")
-		self.hide()
+		
+		$PauseCanvas/LoseMenu/ColorRect.show()
+		$PauseCanvas/LoseMenu/Label.show()
+		$PauseCanvas/LoseMenu/VBoxContainer.show()
+		$PauseCanvas/LoseMenu/AnimationPlayer.queue("New Anim")
+		
+		Engine.time_scale = 0.3
+		get_tree().paused = true
+		
 		var file_r = File.new()
 		file_r.open_encrypted_with_pass(filepath,File.READ,OS.get_unique_id())
 		other_coins = file_r.get_line()
 		file_r.close()
-		write_num = int(other_coins) + int(coin) + 5000
-			
+		write_num = int(other_coins) + int(coin)
+
 		var file_w = File.new()
 		file_w.open_encrypted_with_pass(filepath,File.WRITE,OS.get_unique_id())
 		file_w.seek_end()

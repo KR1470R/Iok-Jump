@@ -8,7 +8,7 @@ func _process(delta):
 #	if Input.is_key_pressed(KEY_DOWN):
 #		self.position.y -= 5
 	if self.position.y >= 650:
-		self.position = Vector2(0,-50)
+		self.position = Vector2(1000,-50)
 
 func _on_Boost_pressed():
 	touch_boost = true

@@ -59,12 +59,17 @@ func _physics_process(delta):
            score += 0.023        
         if rocket == '6':
            score += 0.026
-    if self.position.x >= 520 or self.position.x <= -500:
+    var wx = OS.get_real_window_size().x
+    var wy = OS.get_real_window_size().y
+    if self.position.y >= wy or self.position.y <= -wy:
         self.position = Vector2(200,-100)
-    if self.position.y >= 300:
+    if self.position.x >= wx+100 or self.position.x <= -wx:
         self.position = Vector2(200,-100)
-    if self.position.y < -320:
-        self.position = Vector2(200,-100)
+
+#    if self.position.y >= 300:
+#        self.position = Vector2(200,-100)
+#    if self.position.y < -320:
+#        self.position = Vector2(200,-100)
     pass
 	
 func _on_Left_pressed():
