@@ -23,7 +23,7 @@
 [ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=1]
-size = 150
+size = 255
 font_data = ExtResource( 3 )
 
 [sub_resource type="Shader" id=2]
@@ -130,7 +130,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=11]
-size = 50
+size = 100
 font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=12]
@@ -148,7 +148,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 resource_name = "New Anim (2)"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Heart:rotation_degrees")
@@ -163,8 +163,8 @@ tracks/0/keys = {
 "values": [ 0.0, 236.8, 60.0 ]
 }
 
-[sub_resource type="DynamicFont" id=13]
-size = 50
+[sub_resource type="DynamicFont" id=14]
+size = 110
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
@@ -180,10 +180,12 @@ script = ExtResource( 2 )
 z_index = 1
 
 [node name="LabelCanvas" type="Label" parent="TimerCanvas/Sprite"]
-margin_left = 465.35
-margin_top = 200.43
-margin_right = 578.35
-margin_bottom = 352.43
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 928.898
+margin_top = 358.846
+margin_right = 991.898
+margin_bottom = 615.846
 custom_fonts/font = SubResource( 1 )
 text = "1"
 
@@ -199,10 +201,8 @@ anims/Counter = SubResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 editor/display_folded = true
-margin_left = -35.0
-margin_top = -35.0
-margin_right = 988.0
-margin_bottom = 564.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Stars" type="Sprite" parent="TextureRect"]
 position = Vector2( 140.257, 540.983 )
@@ -252,7 +252,7 @@ texture = ExtResource( 9 )
 anims/Shine = SubResource( 6 )
 
 [node name="Explosion" parent="Rocket2" instance=ExtResource( 10 )]
-position = Vector2( -3.4342, 34.1276 )
+position = Vector2( 4.18592, 36.6676 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rocket2"]
 position = Vector2( -0.709999, 0 )
@@ -272,7 +272,7 @@ anims/Flicker = SubResource( 7 )
 [node name="NodeMeteor" type="CanvasLayer" parent="."]
 
 [node name="Meteors" parent="." instance=ExtResource( 11 )]
-position = Vector2( 87.9782, -54.5318 )
+position = Vector2( 214.704, 41.2852 )
 z_index = -3
 
 [node name="UFO" parent="." instance=ExtResource( 12 )]
@@ -290,44 +290,44 @@ anims/ScreenShake = SubResource( 10 )
 [node name="Gamepad" type="Node2D" parent="Hud"]
 
 [node name="Left" type="TouchScreenButton" parent="Hud/Gamepad"]
-position = Vector2( 8.64988, 460.134 )
-scale = Vector2( 1.30951, 1.30951 )
+position = Vector2( 51.448, 837.764 )
+scale = Vector2( 2.18, 2.18 )
 normal = ExtResource( 13 )
 
 [node name="Right" type="TouchScreenButton" parent="Hud/Gamepad"]
-position = Vector2( 213.59, 464.324 )
-scale = Vector2( 1.26115, 1.26115 )
+position = Vector2( 372.195, 844.472 )
+scale = Vector2( 2.18, 2.18 )
 normal = ExtResource( 14 )
 
 [node name="Boost" type="TouchScreenButton" parent="Hud/Gamepad"]
-position = Vector2( 946.894, 432.596 )
+position = Vector2( 1756.23, 841.391 )
 rotation = 1.58365
-scale = Vector2( 1.25231, 1.25231 )
+scale = Vector2( 2.18013, 2.18013 )
 normal = ExtResource( 15 )
 
 [node name="Pause" type="TouchScreenButton" parent="Hud/Gamepad"]
-position = Vector2( 920.185, 23.8 )
-scale = Vector2( 1.49756, 1.49756 )
+position = Vector2( 1748.54, 39.2543 )
+scale = Vector2( 2.18, 2.18 )
 normal = ExtResource( 16 )
 
 [node name="LabelCoin" type="Label" parent="Hud"]
-margin_left = 82.101
-margin_top = 114.987
-margin_right = 122.1
-margin_bottom = 166.987
+margin_left = 140.812
+margin_top = 163.674
+margin_right = 215.812
+margin_bottom = 265.674
 custom_fonts/font = SubResource( 11 )
 text = "0"
 
 [node name="coin" type="Sprite" parent="Hud/LabelCoin"]
-position = Vector2( -42.5383, 26.6743 )
-scale = Vector2( 1.38824, 1.38824 )
+position = Vector2( -65.4499, 52.4498 )
+scale = Vector2( 2.18, 2.18 )
 texture = ExtResource( 7 )
 
 [node name="HealthProgress" type="TextureProgress" parent="Hud"]
-margin_left = 37.374
-margin_top = 35.258
-margin_right = 222.374
-margin_bottom = 72.258
+margin_left = 89.0776
+margin_top = 35.0
+margin_right = 501.078
+margin_bottom = 117.0
 max_value = 120.0
 value = 100.0
 texture_under = ExtResource( 17 )
@@ -338,29 +338,30 @@ tint_progress = Color( 0.113725, 1, 0, 1 )
 nine_patch_stretch = true
 
 [node name="Heart" type="Sprite" parent="Hud/HealthProgress"]
-position = Vector2( -6.70559, 15.2756 )
+position = Vector2( -12.5042, 37.7279 )
 rotation = 4.13294
-scale = Vector2( 0.428669, 0.428669 )
+scale = Vector2( 0.815166, 0.815166 )
 texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hud/HealthProgress"]
 "anims/New Anim" = SubResource( 12 )
-"anims/New Anim (2)" = SubResource( 14 )
+"anims/New Anim (2)" = SubResource( 13 )
 
 [node name="LabelScore2" type="Label" parent="Hud"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -95.0
-margin_right = 95.0
-margin_bottom = 84.9998
-custom_fonts/font = SubResource( 13 )
+margin_left = -369.138
+margin_top = 34.0
+margin_right = 40.8618
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 14 )
 text = "Score"
 
 [node name="LabelScore" type="Label" parent="Hud/LabelScore2"]
-margin_left = 194.0
-margin_right = 232.0
-margin_bottom = 52.0
-custom_fonts/font = SubResource( 13 )
+margin_left = 435.965
+margin_right = 517.965
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.945098, 0.0784314, 0.0784314, 1 )
 text = "0"
 
@@ -376,8 +377,8 @@ visible = false
 [connection signal="released" from="Hud/Gamepad/Left" to="Rocket2" method="_on_Left_released"]
 [connection signal="pressed" from="Hud/Gamepad/Right" to="Rocket2" method="_on_Right_pressed"]
 [connection signal="released" from="Hud/Gamepad/Right" to="Rocket2" method="_on_Right_released"]
-[connection signal="pressed" from="Hud/Gamepad/Boost" to="Rocket2" method="_on_Boost_pressed"]
 [connection signal="pressed" from="Hud/Gamepad/Boost" to="TextureRect/Stars" method="_on_Boost_pressed"]
-[connection signal="released" from="Hud/Gamepad/Boost" to="Rocket2" method="_on_Boost_released"]
+[connection signal="pressed" from="Hud/Gamepad/Boost" to="Rocket2" method="_on_Boost_pressed"]
 [connection signal="released" from="Hud/Gamepad/Boost" to="TextureRect/Stars" method="_on_Boost_released"]
+[connection signal="released" from="Hud/Gamepad/Boost" to="Rocket2" method="_on_Boost_released"]
 [connection signal="pressed" from="Hud/Gamepad/Pause" to="PauseCanvas/PauseMenu" method="_on_Pause_pressed"]

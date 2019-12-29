@@ -22,8 +22,8 @@
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_30_delay-0-removebg-preview.png" type="Texture" id=20]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 24.5042
-height = 44.3968
+radius = 35.1416
+height = 50.0953
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -67,7 +67,8 @@ texture = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 editor/display_folded = true
-position = Vector2( 72.102, 273.307 )
+position = Vector2( 72.5443, 260.37 )
+scale = Vector2( 1.36396, 1.32618 )
 frames = SubResource( 2 )
 animation = "meteor"
 frame = 16
