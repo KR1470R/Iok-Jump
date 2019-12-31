@@ -22,7 +22,7 @@ var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 
 var boost_cheker = 'user://boost_cheker.bin'
 
-
+var label_score = 'Your score %s'
 export (Color) var green_color = Color.green
 export (Color) var yellow_color = Color.yellow
 export (Color) var red_color = Color.red
@@ -78,6 +78,8 @@ func _on_Area2D_body_entered(area):
 		$PauseCanvas/LoseMenu/Label.show()
 		$PauseCanvas/LoseMenu/VBoxContainer.show()
 		$PauseCanvas/LoseMenu/AnimationPlayer.queue("New Anim")
+		$PauseCanvas/LoseMenu/score.show()
+		$PauseCanvas/LoseMenu/score.text = str(label_score % score)
 		
 		Engine.time_scale = 0.3
 		get_tree().paused = true

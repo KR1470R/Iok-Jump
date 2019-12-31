@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=2]
@@ -18,6 +18,8 @@ shader_param/amount = 2.2
 
 [sub_resource type="DynamicFont" id=3]
 size = 150
+outline_size = 10
+outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=4]
@@ -32,6 +34,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1.36604, 1 ),
 "update": 0,
 "values": [ 0.0, 2.25 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "New Anim"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PauseLabel:custom_fonts/font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 0.678431, 0, 1 ), Color( 1, 0.984314, 0, 1 ), Color( 0.0313726, 1, 0, 1 ), Color( 0, 1, 1, 1 ), Color( 0.101961, 0, 1, 1 ), Color( 1, 0, 0.890196, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
 [node name="PauseMenu" type="Control"]
@@ -84,5 +103,9 @@ texture_normal = ExtResource( 4 )
 
 [node name="BlurTransition" type="AnimationPlayer" parent="."]
 anims/Transition = SubResource( 4 )
+
+[node name="TextRainbow" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 5 )
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
