@@ -105,7 +105,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 518.055, 446.452 ), Vector2( 518.055, 131.682 ) ]
+"values": [ Vector2( 1000, 900 ), Vector2( 1000, 131.682 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("not_enought_money:modulate")
@@ -133,7 +133,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 518.055, 446.452 ), Vector2( 518.055, 131.682 ) ]
+"values": [ Vector2( 1000, 900 ), Vector2( 1000, 131.682 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("suc_push:modulate")
@@ -267,31 +267,29 @@ autoplay = "AnimatonElements"
 anims/AnimatonElements = SubResource( 4 )
 
 [node name="CanvasNotMoney" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="not_enought_money" type="Sprite" parent="CanvasNotMoney"]
 visible = false
-modulate = Color( 1, 1, 1, 0.666667 )
-position = Vector2( 518.055, 341.529 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1000, 131.682 )
+scale = Vector2( 2.58507, 2.42405 )
 texture = ExtResource( 9 )
 script = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasNotMoney"]
-autoplay = "New Anim"
 "anims/New Anim" = SubResource( 5 )
 
 [node name="CanvasSucPursh" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="suc_push" type="Sprite" parent="CanvasSucPursh"]
 visible = false
-modulate = Color( 1, 1, 1, 0.933333 )
-position = Vector2( 518.055, 299.559 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1000, 900 )
+scale = Vector2( 2.585, 2.424 )
 texture = ExtResource( 11 )
 script = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasSucPursh"]
-autoplay = "New Anim"
 "anims/New Anim" = SubResource( 6 )
 
 [node name="Buttons" type="CenterContainer" parent="."]
@@ -327,7 +325,7 @@ margin_left = 392.0
 margin_top = 431.65
 margin_right = 1624.0
 margin_bottom = 1129.65
-color = Color( 0.12549, 0.12549, 0.12549, 0.74902 )
+color = Color( 0.172549, 0.172549, 0.172549, 0.756863 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 editor/display_folded = true
