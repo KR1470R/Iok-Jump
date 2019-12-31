@@ -20,6 +20,9 @@ var gold_rocket = load("res://texture_ui/game/characters/gold_rocket_4.png")
 var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
 var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 
+var boost_cheker = 'user://boost_cheker.bin'
+
+
 export (Color) var green_color = Color.green
 export (Color) var yellow_color = Color.yellow
 export (Color) var red_color = Color.red
@@ -68,6 +71,9 @@ func _on_Area2D_body_entered(area):
 	if health <= 0:
 		print("U lose")
 		
+		$Hud/LabelScore2.hide()
+		$Hud/Gamepad.hide()
+		
 		$PauseCanvas/LoseMenu/ColorRect.show()
 		$PauseCanvas/LoseMenu/Label.show()
 		$PauseCanvas/LoseMenu/VBoxContainer.show()
@@ -93,6 +99,20 @@ func _on_Area2D_body_entered(area):
 		file_score_w.seek_end()
 		file_score_w.store_line(str(score))
 		file_score_w.close()
+		
+		
+		var all_score = File.new()
+		all_score.open_encrypted_with_pass('user://score.bin', File.READ, OS.get_unique_id())
+		var string = all_score.get_line()
+		all_score.close()
+		if score>float(string):
+			all_score = File.new()
+			all_score.open_encrypted_with_pass('user://score.bin',File.WRITE,OS.get_unique_id())
+			all_score.seek_end()
+			all_score.store_line(str(score))
+			all_score.close()
+		else:
+			pass
 	#		file.store_var(coin)
 	#		file.close
 
@@ -117,3 +137,12 @@ func _on_AreaCoin_area_entered(area):
 #    print(score)
 
 
+func _on_Restart_pressed():
+	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
+	Engine.time_scale = 1
+	get_tree().paused = false
+
+func _on_Exit_pressed():
+	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")
+	Engine.time_scale = 1
+	get_tree().paused = false

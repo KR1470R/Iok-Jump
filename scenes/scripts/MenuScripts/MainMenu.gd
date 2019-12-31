@@ -1,22 +1,12 @@
 extends Control
-var label
-var coin = 0
 var filepath = "user://coins.bin"
 var ships = "user://ships.bin"
-var file
 var coins
 var res
-var cina_first = 350
-var cina_second = 470
-var cina_third = 650
-var cina_four = 740
-var cina_five = 850
-var ships_r
 var list = [1,0,0,0,0,0]
 var file_w
 var file_ships_w
 var lst
-var texture1 = false
 
 func _ready():
 #	OS.get_user_data_dir()
@@ -63,7 +53,9 @@ func _on_HomeButton_pressed():
 	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
+	$Buttons/VBoxContainer.hide()
+	$CareerFree.show()
+	$Elements/Home.show()
 func _on_Rocket_icon_pressed():
 	get_node("Elements/heart-logo-png-17").show()
 	get_node("Elements/heart-logo-png-18").show()
@@ -76,4 +68,8 @@ func _on_Rocket_icon_pressed():
 		get_node("Elements/heart-logo-png-19").show()
 	
 	
+func _on_Free_mode_pressed():
+	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
 
+func _on_Home_pressed():
+	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")

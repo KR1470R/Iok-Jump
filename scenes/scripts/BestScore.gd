@@ -1,8 +1,5 @@
 extends Label
-var filepath_lastscore = "user://last_score.bin"
 var filepath_score = "user://score.bin"
-var last_score
-var res
 var file_w
 var label_text = 'Best Score %s'
 func _ready():

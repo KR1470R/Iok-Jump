@@ -46,6 +46,11 @@ func _physics_process(delta):
         move_and_collide(RIGHT * speed_right_left)
 #        rotation+=1*delta
     if Input.is_action_pressed("ui_accept") or touch_boost:
+#        var bf = File.new()
+#        bf.open_encrypted_with_pass(boost_cheker, File.WRITE, OS.get_unique_id())
+#        bf.seek_end()
+#        bf.store_line(str(touch_boost))
+
         move_and_collide(TOP * 5)
         if rocket == '1':
            score += 0.010

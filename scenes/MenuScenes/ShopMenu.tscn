@@ -1,38 +1,33 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/ShopMenu.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
-[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=3]
+[ext_resource path="res://texture_ui/menu/buy_button.png" type="Texture" id=3]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
-[ext_resource path="res://fonts/18214.otf" type="DynamicFontData" id=6]
-[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=7]
-[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=8]
-[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=9]
-[ext_resource path="res://texture_ui/menu/not_enought_money.png" type="Texture" id=10]
-[ext_resource path="res://scripts/not_enought_money.gd" type="Script" id=11]
-[ext_resource path="res://texture_ui/menu/not_enought_money_001 (copy).png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=14]
-[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=16]
-[ext_resource path="res://texture_ui/game/characters/pro_rocket_2.png" type="Texture" id=17]
-[ext_resource path="res://texture_ui/game/characters/master_rockey_3.png" type="Texture" id=18]
-[ext_resource path="res://texture_ui/game/characters/gold_rocket_4.png" type="Texture" id=19]
-[ext_resource path="res://texture_ui/game/characters/node_rocket_5.png" type="Texture" id=20]
-[ext_resource path="res://texture_ui/game/characters/3d_rocket_7.png" type="Texture" id=21]
+[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=7]
+[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=8]
+[ext_resource path="res://texture_ui/menu/not_enought_money.png" type="Texture" id=9]
+[ext_resource path="res://scripts/not_enought_money.gd" type="Script" id=10]
+[ext_resource path="res://texture_ui/menu/not_enought_money_001 (copy).png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/characters/pro_rocket_2.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/characters/master_rockey_3.png" type="Texture" id=17]
+[ext_resource path="res://texture_ui/game/characters/gold_rocket_4.png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/game/characters/node_rocket_5.png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/game/characters/3d_rocket_7.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
+size = 150
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 25
-font_data = ExtResource( 6 )
-
 [sub_resource type="DynamicFont" id=3]
-size = 50
+size = 120
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=4]
@@ -45,9 +40,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
-"transitions": PoolRealArray( 0.999999, 1, 1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -456.008, -76.462 ), Vector2( -456.008, 55.178 ), Vector2( -456.008, 16.958 ), Vector2( -456.008, 28.968 ) ]
+"values": [ Vector2( -415.178, -105.512 ), Vector2( -415.178, 55.178 ), Vector2( -415.178, 39.543 ), Vector2( -415.178, 62.128 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("HomeButton:rect_position")
@@ -59,7 +54,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 420.803, -120.85 ), Vector2( 420.803, 2.73 ), Vector2( 420.803, -24.32 ), Vector2( 420.803, -11.12 ) ]
+"values": [ Vector2( 1280, -120.85 ), Vector2( 1280, 2.73 ), Vector2( 1280, -24.32 ), Vector2( 1280, -11.12 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("LabelCoin:rect_position")
@@ -71,7 +66,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -400, -102.04 ), Vector2( -400, 29.65 ), Vector2( -400, -10.99 ), Vector2( -400, 2.12 ) ]
+"values": [ Vector2( -329.28, -102.04 ), Vector2( -329.28, 29.65 ), Vector2( -329.28, -10.99 ), Vector2( -329.28, 2.12 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Rocket_icon:rect_position")
@@ -81,9 +76,9 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 4, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -417.268, 40 ), Vector2( -745.818, -557.63 ) ]
+"values": [ Vector2( -265.039, 144.516 ), Vector2( -1100, -900 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Rocket_icon:rect_rotation")
@@ -96,18 +91,6 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 4, 1 ),
 "update": 0,
 "values": [ 0.0, -15.0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("WithLove:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 2.46229, 1 ),
-"update": 0,
-"values": [ Vector2( -503.852, 522.388 ), Vector2( -503.852, 585.338 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -166,7 +149,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="DynamicFont" id=7]
-size = 30
+size = 90
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -188,7 +171,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 588, 236 ), Vector2( 1100, 236 ) ]
+"values": [ Vector2( 588, 236 ), Vector2( 2000, 236 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ScrollContainer:rect_position")
@@ -200,7 +183,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 124.24, 620 ), Vector2( 124.24, 207.36 ) ]
+"values": [ Vector2( 397.5, 1000 ), Vector2( 397.5, 442 ) ]
 }
 
 [node name="ShopMenu" type="Control"]
@@ -222,59 +205,49 @@ margin_bottom = 173.973
 expand = true
 
 [node name="BackForLabel" type="Sprite" parent="Elements"]
-position = Vector2( 170.111, 73.28 )
-scale = Vector2( 1.24542, 1.09997 )
+position = Vector2( 852.8, 137.293 )
+scale = Vector2( 2.461, 2.461 )
 texture = ExtResource( 3 )
 
 [node name="WelcomeLabel" type="Label" parent="Elements"]
-margin_left = 10.195
-margin_top = 41.15
-margin_right = 341.195
-margin_bottom = 103.15
+margin_left = 619.307
+margin_top = 59.208
+margin_right = 1071.31
+margin_bottom = 211.208
 custom_fonts/font = SubResource( 1 )
 text = "Shop"
 align = 1
 valign = 1
 
 [node name="coin_icon" type="Sprite" parent="Elements"]
-position = Vector2( -456.008, 28.968 )
-scale = Vector2( 1.71697, 1.71697 )
+position = Vector2( -415.178, -105.512 )
+scale = Vector2( 2.891, 2.891 )
 texture = ExtResource( 5 )
 
-[node name="WithLove" type="Label" parent="Elements"]
-margin_left = -495.0
-margin_top = 585.338
-margin_right = -357.0
-margin_bottom = 630.338
-custom_fonts/font = SubResource( 2 )
-text = "With Love-
-Ajva Community."
-
 [node name="Rocket_icon" type="TextureButton" parent="Elements"]
-margin_left = -745.818
-margin_top = -557.63
-margin_right = -355.818
-margin_bottom = 15.37
-rect_rotation = -15.0
+margin_left = -265.039
+margin_top = 144.516
+margin_right = 398.961
+margin_bottom = 1120.52
 rect_pivot_offset = Vector2( 175.44, 264.2 )
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 expand = true
 
 [node name="HomeButton" type="TextureButton" parent="Elements"]
-margin_left = 420.803
-margin_top = -11.12
-margin_right = 505.803
-margin_bottom = 71.88
-texture_normal = ExtResource( 8 )
+margin_left = 1280.0
+margin_top = -120.85
+margin_right = 1418.0
+margin_bottom = 14.15
+texture_normal = ExtResource( 7 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
-margin_left = -400.0
-margin_top = 2.12
-margin_right = -360.0
-margin_bottom = 54.12
+margin_left = -329.28
+margin_top = -102.04
+margin_right = -289.28
+margin_bottom = 19.96
 custom_fonts/font = SubResource( 3 )
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
@@ -286,8 +259,8 @@ anims/AnimatonElements = SubResource( 4 )
 visible = false
 modulate = Color( 1, 1, 1, 0.666667 )
 position = Vector2( 518.055, 341.529 )
-texture = ExtResource( 10 )
-script = ExtResource( 11 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasNotMoney"]
 autoplay = "New Anim"
@@ -299,8 +272,8 @@ autoplay = "New Anim"
 visible = false
 modulate = Color( 1, 1, 1, 0.933333 )
 position = Vector2( 518.055, 299.559 )
-texture = ExtResource( 12 )
-script = ExtResource( 11 )
+texture = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasSucPursh"]
 autoplay = "New Anim"
@@ -308,53 +281,55 @@ autoplay = "New Anim"
 
 [node name="Buttons" type="CenterContainer" parent="."]
 editor/display_folded = true
-margin_left = 1100.0
+margin_left = 2000.0
 margin_top = 236.0
-margin_right = 1330.0
-margin_bottom = 544.0
+margin_right = 2470.0
+margin_bottom = 874.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-margin_right = 230.0
-margin_bottom = 308.0
+margin_right = 470.0
+margin_bottom = 638.0
 
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_right = 230.0
-margin_bottom = 100.0
-texture_normal = ExtResource( 13 )
+margin_right = 470.0
+margin_bottom = 210.0
+texture_normal = ExtResource( 12 )
 
 [node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 104.0
-margin_right = 230.0
-margin_bottom = 204.0
-texture_normal = ExtResource( 14 )
+margin_top = 214.0
+margin_right = 470.0
+margin_bottom = 424.0
+texture_normal = ExtResource( 13 )
 
 [node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 208.0
-margin_right = 230.0
-margin_bottom = 308.0
-texture_normal = ExtResource( 15 )
+margin_top = 428.0
+margin_right = 470.0
+margin_bottom = 638.0
+texture_normal = ExtResource( 14 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-anchor_right = 1.0
-margin_left = 124.24
-margin_top = 207.36
-margin_right = -134.76
-margin_bottom = 601.36
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -562.0
+margin_top = -638.0
+margin_right = 649.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 100.0
-margin_bottom = 860.0
+margin_right = 300.0
+margin_bottom = 2720.0
 
 [node name="Base_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_right = 100.0
-margin_bottom = 140.0
-texture_normal = ExtResource( 16 )
+margin_right = 300.0
+margin_bottom = 450.0
+texture_normal = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
-margin_left = 149.784
-margin_top = 2.45547
-margin_right = 408.784
-margin_bottom = 34.4555
+margin_left = 270.024
+margin_top = 2.455
+margin_right = 1124.02
+margin_bottom = 104.455
 custom_fonts/font = SubResource( 7 )
 text = "Base Rocket "
 
@@ -377,16 +352,16 @@ HP - 3
 Bullet - No"
 
 [node name="Pro_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_top = 144.0
-margin_right = 100.0
-margin_bottom = 284.0
-texture_normal = ExtResource( 17 )
+margin_top = 454.0
+margin_right = 300.0
+margin_bottom = 904.0
+texture_normal = ExtResource( 16 )
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
-margin_left = 149.784
+margin_left = 270.024
 margin_top = 4.165
-margin_right = 460.784
-margin_bottom = 36.165
+margin_right = 1300.02
+margin_bottom = 106.165
 custom_fonts/font = SubResource( 7 )
 text = "Master Rocket "
 
@@ -409,16 +384,16 @@ HP - 3
 Bullet - No"
 
 [node name="Master_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_top = 288.0
-margin_right = 100.0
-margin_bottom = 428.0
-texture_normal = ExtResource( 18 )
+margin_top = 908.0
+margin_right = 300.0
+margin_bottom = 1358.0
+texture_normal = ExtResource( 17 )
 
 [node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
-margin_left = 149.784
+margin_left = 270.024
 margin_top = 0.735
-margin_right = 408.784
-margin_bottom = 32.735
+margin_right = 1049.02
+margin_bottom = 102.735
 custom_fonts/font = SubResource( 7 )
 text = "PRo  rocket"
 
@@ -441,16 +416,16 @@ HP - 4
 Bullet - No"
 
 [node name="Gold_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_top = 432.0
-margin_right = 100.0
-margin_bottom = 572.0
-texture_normal = ExtResource( 19 )
+margin_top = 1362.0
+margin_right = 300.0
+margin_bottom = 1812.0
+texture_normal = ExtResource( 18 )
 
 [node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
-margin_left = 149.784
+margin_left = 270.024
 margin_top = 5.375
-margin_right = 408.784
-margin_bottom = 37.375
+margin_right = 1125.02
+margin_bottom = 107.375
 custom_fonts/font = SubResource( 7 )
 text = "gold  rocket"
 
@@ -473,16 +448,16 @@ HP - 5
 Bullet - Yes"
 
 [node name="Node_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_top = 576.0
-margin_right = 100.0
-margin_bottom = 716.0
-texture_normal = ExtResource( 20 )
+margin_top = 1816.0
+margin_right = 300.0
+margin_bottom = 2266.0
+texture_normal = ExtResource( 19 )
 
 [node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
-margin_left = 149.784
+margin_left = 270.024
 margin_top = 5.195
-margin_right = 408.784
-margin_bottom = 37.195
+margin_right = 1073.02
+margin_bottom = 107.195
 custom_fonts/font = SubResource( 7 )
 text = "node rocket"
 
@@ -505,16 +480,16 @@ HP - 5
 Bullet - Yes"
 
 [node name="THREED_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-margin_top = 720.0
-margin_right = 100.0
-margin_bottom = 860.0
-texture_normal = ExtResource( 21 )
+margin_top = 2270.0
+margin_right = 300.0
+margin_bottom = 2720.0
+texture_normal = ExtResource( 20 )
 
 [node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
-margin_left = 149.784
+margin_left = 270.024
 margin_top = 9.475
-margin_right = 408.784
-margin_bottom = 41.475
+margin_right = 924.024
+margin_bottom = 111.475
 custom_fonts/font = SubResource( 7 )
 text = "3d rocket"
 
@@ -542,7 +517,7 @@ visible = false
 margin_top = 864.0
 margin_right = 100.0
 margin_bottom = 1004.0
-texture_normal = ExtResource( 21 )
+texture_normal = ExtResource( 20 )
 
 [node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Comming Soon!"]
 margin_left = 149.784

@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/MenuScripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
-[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=3]
+[ext_resource path="res://texture_ui/menu/buy_button.png" type="Texture" id=3]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
 [ext_resource path="res://texture_ui/menu/heart-logo-png-17.png" type="Texture" id=6]
@@ -10,9 +10,12 @@
 [ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=8]
 [ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=9]
 [ext_resource path="res://scripts/BestScore.gd" type="Script" id=10]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/menu/free_mode.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -159,7 +162,13 @@ outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="GDScript" id=7]
+script/source = "extends HBoxContainer
+
+
+"
+
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -170,7 +179,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2000, 384.96 ), Vector2( 1200, 384.96 ) ]
+"values": [ Vector2( 2000, 300 ), Vector2( 874.3, 300 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Elements/BestScore:rect_position")
@@ -206,7 +215,7 @@ margin_bottom = 173.973
 expand = true
 
 [node name="BackForLabel" type="Sprite" parent="Elements"]
-position = Vector2( 850.852, 137.293 )
+position = Vector2( 852.8, 137.293 )
 scale = Vector2( 2.46114, 2.01444 )
 texture = ExtResource( 3 )
 
@@ -221,7 +230,7 @@ align = 1
 valign = 1
 
 [node name="coin_icon" type="Sprite" parent="Elements"]
-position = Vector2( -415.178, -65.3395 )
+position = Vector2( -415.178, 62.128 )
 scale = Vector2( 2.89149, 2.89149 )
 texture = ExtResource( 5 )
 
@@ -254,19 +263,19 @@ text = "With Love-
 Ajva Community. "
 
 [node name="Rocket_icon" type="TextureButton" parent="Elements"]
-margin_left = -241.347
-margin_top = 410.0
-margin_right = 422.653
-margin_bottom = 1386.0
+margin_left = -265.039
+margin_top = 144.516
+margin_right = 398.961
+margin_bottom = 1120.52
 rect_pivot_offset = Vector2( 175.44, 264.2 )
 texture_normal = ExtResource( 8 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
 margin_left = -329.28
-margin_top = -112.155
+margin_top = -2.18
 margin_right = -239.28
-margin_bottom = 9.84501
+margin_bottom = 119.82
 custom_fonts/font = SubResource( 3 )
 text = "0"
 script = ExtResource( 9 )
@@ -277,47 +286,80 @@ anims/AnimatonElements = SubResource( 4 )
 anims/RocketShake = SubResource( 5 )
 
 [node name="BestScore" type="Label" parent="Elements"]
-margin_left = 331.35
+margin_left = 665.25
 margin_top = 290.0
-margin_right = 1301.35
+margin_right = 1635.25
 margin_bottom = 497.0
 custom_fonts/font = SubResource( 6 )
 text = "a"
 script = ExtResource( 10 )
 
+[node name="Home" type="TextureButton" parent="Elements"]
+visible = false
+margin_left = 1284.33
+margin_top = 9.25308
+margin_right = 1407.33
+margin_bottom = 132.253
+texture_normal = ExtResource( 11 )
+expand = true
+
 [node name="Buttons" type="CenterContainer" parent="."]
-margin_left = 1200.0
-margin_top = 384.96
-margin_right = 1734.0
-margin_bottom = 1062.96
+editor/display_folded = true
+margin_left = 874.3
+margin_top = 300.0
+margin_right = 1844.3
+margin_bottom = 1152.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-margin_left = 32.0
-margin_top = 20.0
-margin_right = 502.0
-margin_bottom = 658.0
+margin_left = 250.0
+margin_top = 107.0
+margin_right = 720.0
+margin_bottom = 745.0
 
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_right = 470.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
 
 [node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 214.0
 margin_right = 470.0
 margin_bottom = 424.0
-texture_normal = ExtResource( 12 )
+texture_normal = ExtResource( 13 )
 
 [node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 428.0
 margin_right = 470.0
 margin_bottom = 638.0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 14 )
+
+[node name="CareerFree" type="HBoxContainer" parent="."]
+editor/display_folded = true
+visible = false
+margin_left = 862.3
+margin_top = 615.73
+margin_right = 1832.3
+margin_bottom = 825.73
+custom_constants/separation = 30
+script = SubResource( 7 )
+
+[node name="Career" type="TextureButton" parent="CareerFree"]
+margin_right = 470.0
+margin_bottom = 210.0
+texture_normal = ExtResource( 15 )
+
+[node name="Free mode" type="TextureButton" parent="CareerFree"]
+margin_left = 500.0
+margin_right = 970.0
+margin_bottom = 210.0
+texture_normal = ExtResource( 16 )
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "AnimtionElements"
-anims/AnimtionElements = SubResource( 7 )
+anims/AnimtionElements = SubResource( 8 )
 [connection signal="pressed" from="Elements/Rocket_icon" to="." method="_on_Rocket_icon_pressed"]
+[connection signal="pressed" from="Elements/Home" to="." method="_on_Home_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Shop" to="." method="_on_Shop_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="CareerFree/Free mode" to="." method="_on_Free_mode_pressed"]
