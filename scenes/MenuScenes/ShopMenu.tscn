@@ -153,11 +153,11 @@ size = 90
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 50
+size = 90
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 25
+size = 70
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=10]
@@ -171,7 +171,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 588, 236 ), Vector2( 2000, 236 ) ]
+"values": [ Vector2( 874.3, 400 ), Vector2( 2000, 400 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ScrollContainer:rect_position")
@@ -184,6 +184,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 397.5, 1000 ), Vector2( 397.5, 442 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 392, 1000 ), Vector2( 392, 431.65 ) ]
 }
 
 [node name="ShopMenu" type="Control"]
@@ -198,6 +210,7 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="Elements" type="TextureRect" parent="."]
+editor/display_folded = true
 margin_left = 504.47
 margin_top = 26.9734
 margin_right = 922.47
@@ -254,6 +267,7 @@ autoplay = "AnimatonElements"
 anims/AnimatonElements = SubResource( 4 )
 
 [node name="CanvasNotMoney" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="not_enought_money" type="Sprite" parent="CanvasNotMoney"]
 visible = false
@@ -267,6 +281,7 @@ autoplay = "New Anim"
 "anims/New Anim" = SubResource( 5 )
 
 [node name="CanvasSucPursh" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="suc_push" type="Sprite" parent="CanvasSucPursh"]
 visible = false
@@ -282,9 +297,9 @@ autoplay = "New Anim"
 [node name="Buttons" type="CenterContainer" parent="."]
 editor/display_folded = true
 margin_left = 2000.0
-margin_top = 236.0
+margin_top = 400.0
 margin_right = 2470.0
-margin_bottom = 874.0
+margin_bottom = 1038.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
 margin_right = 470.0
@@ -307,20 +322,30 @@ margin_right = 470.0
 margin_bottom = 638.0
 texture_normal = ExtResource( 14 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 392.0
+margin_top = 431.65
+margin_right = 1624.0
+margin_bottom = 1129.65
+color = Color( 0.12549, 0.12549, 0.12549, 0.74902 )
+
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -562.0
+margin_left = -562.5
 margin_top = -638.0
-margin_right = 649.0
+margin_right = 648.5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 2720.0
 
 [node name="Base_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_right = 300.0
 margin_bottom = 450.0
 texture_normal = ExtResource( 15 )
@@ -334,24 +359,25 @@ custom_fonts/font = SubResource( 7 )
 text = "Base Rocket "
 
 [node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
-margin_left = 360.0
-margin_top = 47.64
-margin_right = 569.0
-margin_bottom = 106.64
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "Used"
 
 [node name="Descriptions" type="Label" parent="ScrollContainer/VBoxContainer/Base_Rocket"]
-margin_left = 119.085
-margin_top = 44.1056
-margin_right = 310.085
-margin_bottom = 131.106
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 823.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 30%
 HP - 3
 Bullet - No"
 
 [node name="Pro_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 454.0
 margin_right = 300.0
 margin_bottom = 904.0
@@ -366,24 +392,25 @@ custom_fonts/font = SubResource( 7 )
 text = "Master Rocket "
 
 [node name="BuyButton1" type="Button" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
-margin_left = 360.0
-margin_top = 49.0
-margin_right = 569.0
-margin_bottom = 108.0
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "350$"
 
 [node name="Descriptions2" type="Label" parent="ScrollContainer/VBoxContainer/Pro_Rocket"]
-margin_left = 119.085
-margin_top = 36.896
-margin_right = 324.085
-margin_bottom = 123.896
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 823.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 40%
 HP - 3
 Bullet - No"
 
 [node name="Master_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 908.0
 margin_right = 300.0
 margin_bottom = 1358.0
@@ -398,24 +425,25 @@ custom_fonts/font = SubResource( 7 )
 text = "PRo  rocket"
 
 [node name="BuyButton3" type="Button" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
-margin_left = 360.0
-margin_top = 47.28
-margin_right = 569.0
-margin_bottom = 106.28
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "470$"
 
 [node name="Descriptions3" type="Label" parent="ScrollContainer/VBoxContainer/Master_Rocket"]
-margin_left = 119.085
-margin_top = 35.216
-margin_right = 311.085
-margin_bottom = 122.216
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 823.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 43%
 HP - 4
 Bullet - No"
 
 [node name="Gold_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1362.0
 margin_right = 300.0
 margin_bottom = 1812.0
@@ -430,24 +458,25 @@ custom_fonts/font = SubResource( 7 )
 text = "gold  rocket"
 
 [node name="BuyButton4" type="Button" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
-margin_left = 360.0
-margin_top = 54.98
-margin_right = 569.0
-margin_bottom = 113.98
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "550$"
 
 [node name="Descriptions4" type="Label" parent="ScrollContainer/VBoxContainer/Gold_Rocket"]
-margin_left = 119.085
-margin_top = 44.386
-margin_right = 311.085
-margin_bottom = 131.386
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 874.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 50%
 HP - 5
 Bullet - Yes"
 
 [node name="Node_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1816.0
 margin_right = 300.0
 margin_bottom = 2266.0
@@ -462,24 +491,25 @@ custom_fonts/font = SubResource( 7 )
 text = "node rocket"
 
 [node name="BuyButton5" type="Button" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
-margin_left = 360.0
-margin_top = 55.25
-margin_right = 569.0
-margin_bottom = 114.25
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "650$"
 
 [node name="Descriptions5" type="Label" parent="ScrollContainer/VBoxContainer/Node_Rocket"]
-margin_left = 119.085
-margin_top = 40.236
-margin_right = 311.085
-margin_bottom = 127.236
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 874.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 53%
 HP - 5
 Bullet - Yes"
 
 [node name="THREED_Rocket" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 2270.0
 margin_right = 300.0
 margin_bottom = 2720.0
@@ -494,18 +524,18 @@ custom_fonts/font = SubResource( 7 )
 text = "3d rocket"
 
 [node name="BuyButton6" type="Button" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
-margin_left = 360.0
-margin_top = 54.48
-margin_right = 569.0
-margin_bottom = 113.48
+margin_left = 880.0
+margin_top = 120.0
+margin_right = 1192.0
+margin_bottom = 240.0
 custom_fonts/font = SubResource( 8 )
 text = "780$"
 
 [node name="Descriptions6" type="Label" parent="ScrollContainer/VBoxContainer/THREED_Rocket"]
-margin_left = 119.085
-margin_top = 47.016
-margin_right = 329.085
-margin_bottom = 134.016
+margin_left = 300.0
+margin_top = 136.736
+margin_right = 874.0
+margin_bottom = 358.736
 custom_fonts/font = SubResource( 9 )
 text = "Speed - 65 %
 HP - 6
@@ -537,3 +567,4 @@ anims/Change = SubResource( 10 )
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Gold_Rocket/BuyButton4" to="." method="_on_BuyButton4_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Node_Rocket/BuyButton5" to="." method="_on_BuyButton5_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/THREED_Rocket/BuyButton6" to="." method="_on_BuyButton6_pressed"]
+[connection signal="animation_finished" from="TransitionElements" to="." method="_on_TransitionElements_animation_finished"]

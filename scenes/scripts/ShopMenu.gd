@@ -326,3 +326,7 @@ func _on_BuyButton6_pressed():
 			else:
 				$CanvasNotMoney/not_enought_money.show()
 				$CanvasNotMoney/AnimationPlayer.play("New Anim")
+
+
+func _on_TransitionElements_animation_finished(anim_name):
+	$Buttons.queue_free()
