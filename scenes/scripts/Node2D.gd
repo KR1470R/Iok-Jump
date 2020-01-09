@@ -12,7 +12,7 @@ var choose_rocket_path = 'user://used_ship.bin'
 var write_num
 onready var expl 
 onready var health_bar = $Hud/HealthProgress
-
+var seconds = 0
 var base_rocket = load("res://texture_ui/game/characters/character.png")
 var master_rocket = load("res://texture_ui/game/characters/pro_rocket_2.png")
 var pro_rocket = load("res://texture_ui/game/characters/master_rockey_3.png")
@@ -21,32 +21,28 @@ var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
 var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 
 var boost_cheker = 'user://boost_cheker.bin'
-
+var choose_rocket
 var label_score = 'Your score %s'
 export (Color) var green_color = Color.green
 export (Color) var yellow_color = Color.yellow
 export (Color) var red_color = Color.red
 
+var time = 0
+var time_mult = 1.0
+var paused = false
+
 func _ready():
 	health_bar.value = health
-	var choose_rocket = File.new()
-	choose_rocket.open_encrypted_with_pass(choose_rocket_path,File.READ,OS.get_unique_id())
-	var rocket = choose_rocket.get_line()
-	if rocket == '1':
-		$Rocket2/Area2D/character.set_texture(base_rocket)
-	if rocket == '2':
-		$Rocket2/Area2D/character.set_texture(master_rocket)
-	if rocket == '3':
-		$Rocket2/Area2D/character.set_texture(pro_rocket)
-	if rocket == '4':
-		$Rocket2/Area2D/character.set_texture(gold_rocket)
-	if rocket == '5':
-		$Rocket2/Area2D/character.set_texture(node_rocket)
-	if rocket == '6':
-		$Rocket2/Area2D/character.set_texture(threed_rocket)
-		
+
 func _process(delta):
-	score = get_node("Rocket2").get("score")
+#	if not paused:
+#		time += delta*time_mult
+#	if int(time) % 9:
+#		var new_meteor = load("res://MenuScenes/meteor.tscn")
+#		var meteor = new_meteor.instance()
+#		get_node("NodeMeteor").add_child(meteor)   
+		
+	score = get_node("Rocket2/Rocket2").get("score")
 	$Hud/LabelScore2/LabelScore.text = str(score)  
 #	if int(score) % 10 == 0:
 #		if float(score) / 10.000:
@@ -120,8 +116,8 @@ func _on_Area2D_body_entered(area):
 
 func _on_AreaCoin_area_entered(area):
 	get_node("ShakeLabel").queue("Shake")
-	$Rocket2/CollisionPolygon2D2/ColorRect.show()
-	$Rocket2/CollisionPolygon2D2/AnimationFlicker.queue("Flicker")
+	$Rocket2/Rocket2/CollisionPolygon2D2/ColorRect.show()
+	$Rocket2/Rocket2/CollisionPolygon2D2/AnimationFlicker.queue("Flicker")
 	print("+1")
 	coin += 1
 	$Hud/LabelCoin.text = str(coin)

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=1]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=2]
+[ext_resource path="res://scripts/character.gd" type="Script" id=3]
+[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Flicker"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.968627, 1, 0, 1 ), Color( 0.0313726, 1, 0, 1 ), Color( 0, 1, 0.976471, 1 ), Color( 0, 0.0156863, 1, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="Rocket" type="Node2D"]
+
+[node name="Rocket2" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Rocket2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocket2/Area2D"]
+polygon = PoolVector2Array( -29.336, 72.199, 25.4891, 71.6983, 13.9733, 35.6489, 37.5056, 35.6489, 68.0474, 64.6887, 61.0378, 9.36286, 37.0049, -7.66046, 34.7332, -23.2687, 30.094, -40.9712, 19.9608, -68.5603, 8.72891, -91.1462, -0.183369, -105.064, -2.86926, -105.104, -8.24105, -96.0696, -15.4441, -82.7622, -20.4496, -73.2395, -25.3331, -63.3505, -33.2019, -36.9682, -36.8645, -21.9516, -38.6958, -10.1092, -39.062, -8.27793, -65.0663, 10.8332, -67.8743, 52.5867, -68.4848, 62.0812, -38.0853, 36.5652, -16.8424, 36.1989 )
+
+[node name="character" type="Sprite" parent="Rocket2/Area2D"]
+scale = Vector2( 0.469, 0.469 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Explosion" parent="Rocket2" instance=ExtResource( 4 )]
+position = Vector2( -504.899, -304.055 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Rocket2"]
+polygon = PoolVector2Array( -29.336, 72.199, 25.4891, 71.6983, 13.9733, 35.6489, 37.5056, 35.6489, 68.0474, 64.6887, 61.0378, 9.36286, 37.0049, -7.66046, 34.7332, -23.2687, 30.094, -40.9712, 19.9608, -68.5603, 8.72891, -91.1462, -0.183369, -105.064, -2.86926, -105.104, -8.24105, -96.0696, -15.4441, -82.7622, -20.4496, -73.2395, -25.3331, -63.3505, -33.2019, -36.9682, -36.8645, -21.9516, -38.6958, -10.1092, -39.062, -8.27793, -65.0663, 10.8332, -67.8743, 52.5867, -68.4848, 62.0812, -38.0853, 36.5652, -16.8424, 36.1989 )
+
+[node name="ColorRect" type="ColorRect" parent="Rocket2/CollisionPolygon2D2"]
+modulate = Color( 1, 1, 1, 0.509804 )
+margin_left = -76.0
+margin_top = -108.0
+margin_right = 77.0
+margin_bottom = 104.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="AnimationFlicker" type="AnimationPlayer" parent="Rocket2/CollisionPolygon2D2"]
+anims/Flicker = SubResource( 1 )

@@ -8,10 +8,12 @@ var RIGHT = Vector2(1, 0)
 
 var speed_right_left = 10
 var screenSize = Vector2(0,0)
-
+var rotation_dir = 0
+export (float) var rotation_speed = 1.5
 func _ready():
     var centerX = screenSize.x / 2 
     var centerY = screenSize.y / 2
+    var choose_rocket = File.new()
 var touch_left = false 
 var touch_right = false 
 var touch_boost = false 
@@ -36,15 +38,19 @@ func _physics_process(delta):
             score += 0.020
         if rocket == '6':
             score += 0.025
+    rotation_dir = 0
+    var min_rotated_val = -5
+    var max_rotated_val = 5
+	
     if Input.is_action_pressed("ui_down") or touch_down:
         move_and_collide(BOTTOM * speed)
         
     if Input.is_action_pressed("ui_left") or touch_left:
         move_and_collide(LEFT * speed_right_left) 
-#        rotation-=1*delta
+        rotation-= clamp(1*delta, -1,1)
     if Input.is_action_pressed("ui_right") or touch_right:
         move_and_collide(RIGHT * speed_right_left)
-#        rotation+=1*delta
+        rotation+=clamp(1*delta, -1,1)
     if Input.is_action_pressed("ui_accept") or touch_boost:
 #        var bf = File.new()
 #        bf.open_encrypted_with_pass(boost_cheker, File.WRITE, OS.get_unique_id())
@@ -64,6 +70,7 @@ func _physics_process(delta):
            score += 0.023        
         if rocket == '6':
            score += 0.026
+#    rotation += rotation_dir * rotation_speed * delta
     var wx = OS.get_real_window_size().x
     var wy = OS.get_real_window_size().y
     if self.position.y >= wy or self.position.y <= -wy:
