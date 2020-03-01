@@ -7,12 +7,26 @@ var boost_cheker = "user://boost_cheker.bin"
 var path_rocket = "user://used_ship.bin"
 func _physics_process(delta):
 	rng.randomize()
+## boost cheker file get
 	var fr = File.new()
-	fr.open_encrypted_with_pass(boost_cheker, File.READ, OS.get_unique_id())	
+	var check_fr = fr.file_exists(boost_cheker)
+	if check_fr ==  true:
+		fr.open_encrypted_with_pass(boost_cheker, File.READ, OS.get_unique_id())	
+	else:
+		fr.open_encrypted_with_pass(boost_cheker, File.WRITE, OS.get_unique_id())
+		fr.seek_end()
+		fr.store_line(str(true))
 	var string = fr.get_line()
 	
+## rocket id get file
 	var fr2 = File.new()
-	fr2.open_encrypted_with_pass(path_rocket,File.READ, OS.get_unique_id())
+	var cheker_fr2 = fr.file_exists(path_rocket)
+	if cheker_fr2 == true:
+		fr2.open_encrypted_with_pass(path_rocket,File.READ, OS.get_unique_id())
+	else:
+		fr2.open_encrypted_with_pass(path_rocket,File.WRITE, OS.get_unique_id())
+		fr2.seek_end()
+		fr2.store_line(str(1))
 	var string_rocket = fr2.get_line()
 	
 	if int(string_rocket) == 1:
