@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/MenuScripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
@@ -6,16 +6,15 @@
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
 [ext_resource path="res://texture_ui/menu/heart-logo-png-17.png" type="Texture" id=6]
-[ext_resource path="res://fonts/18214.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=8]
-[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=9]
-[ext_resource path="res://scripts/BestScore.gd" type="Script" id=10]
-[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=14]
-[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/menu/free_mode.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=7]
+[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=8]
+[ext_resource path="res://scripts/BestScore.gd" type="Script" id=9]
+[ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=10]
+[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/menu/free_mode.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -23,14 +22,10 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 50
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=3]
 size = 120
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("coin_icon:position")
@@ -69,7 +64,7 @@ tracks/2/keys = {
 "values": [ Vector2( -235.502, 540 ), Vector2( -258.884, 20 ), Vector2( -258.884, 175.049 ), Vector2( -265.039, 144.516 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("heart-logo-png-17:position")
@@ -156,19 +151,19 @@ tracks/6/keys = {
 "values": [ 0.0, -1.0, 1.0, -2.0, 2.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -2.0, 2.0, -1.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 80
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 script/source = "extends HBoxContainer
 
 
 "
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
@@ -252,23 +247,13 @@ position = Vector2( -35.7715, 455.866 )
 scale = Vector2( 0.0750334, 0.0750334 )
 texture = ExtResource( 6 )
 
-[node name="WithLove" type="Label" parent="Elements"]
-margin_left = -498.124
-margin_top = 947.055
-margin_right = -212.124
-margin_bottom = 1034.05
-rect_pivot_offset = Vector2( 52.2, 14.68 )
-custom_fonts/font = SubResource( 2 )
-text = "With Love-
-Ajva Community. "
-
 [node name="Rocket_icon" type="TextureButton" parent="Elements"]
 margin_left = -265.039
 margin_top = 144.516
 margin_right = 398.961
 margin_bottom = 1120.52
 rect_pivot_offset = Vector2( 175.44, 264.2 )
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
@@ -276,23 +261,23 @@ margin_left = -329.28
 margin_top = -2.18
 margin_right = -239.28
 margin_bottom = 119.82
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
-anims/AnimatonElements = SubResource( 4 )
-anims/RocketShake = SubResource( 5 )
+anims/AnimatonElements = SubResource( 3 )
+anims/RocketShake = SubResource( 4 )
 
 [node name="BestScore" type="Label" parent="Elements"]
 margin_left = 665.25
 margin_top = 290.0
 margin_right = 1635.25
 margin_bottom = 497.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "a"
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 [node name="Home" type="TextureButton" parent="Elements"]
 visible = false
@@ -300,7 +285,7 @@ margin_left = 1284.33
 margin_top = 9.25308
 margin_right = 1407.33
 margin_bottom = 132.253
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 10 )
 expand = true
 
 [node name="Buttons" type="CenterContainer" parent="."]
@@ -319,19 +304,19 @@ margin_bottom = 745.0
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_right = 470.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 12 )
+texture_normal = ExtResource( 11 )
 
 [node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 214.0
 margin_right = 470.0
 margin_bottom = 424.0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 12 )
 
 [node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
 margin_top = 428.0
 margin_right = 470.0
 margin_bottom = 638.0
-texture_normal = ExtResource( 14 )
+texture_normal = ExtResource( 13 )
 
 [node name="CareerFree" type="HBoxContainer" parent="."]
 editor/display_folded = true
@@ -341,22 +326,22 @@ margin_top = 615.73
 margin_right = 1832.3
 margin_bottom = 825.73
 custom_constants/separation = 30
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Career" type="TextureButton" parent="CareerFree"]
 margin_right = 470.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 15 )
+texture_normal = ExtResource( 14 )
 
 [node name="Free mode" type="TextureButton" parent="CareerFree"]
 margin_left = 500.0
 margin_right = 970.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 16 )
+texture_normal = ExtResource( 15 )
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "AnimtionElements"
-anims/AnimtionElements = SubResource( 8 )
+anims/AnimtionElements = SubResource( 7 )
 [connection signal="pressed" from="Elements/Rocket_icon" to="." method="_on_Rocket_icon_pressed"]
 [connection signal="pressed" from="Elements/Home" to="." method="_on_Home_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]

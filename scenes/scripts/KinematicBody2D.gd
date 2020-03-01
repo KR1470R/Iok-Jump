@@ -1,4 +1,4 @@
- extends KinematicBody2D
+extends KinematicBody2D
 var screenSize = Vector2(0,0)
 var rng = RandomNumberGenerator.new()
 var BOTTOM = Vector2(0,1)

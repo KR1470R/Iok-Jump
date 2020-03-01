@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Iok Jump Relese"
+config/name="Iok Jump Relese 2"
 run/main_scene="res://MenuScenes/MainMenu.tscn"
 boot_splash/image="res://intro/ajva.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
