@@ -42,7 +42,7 @@ func _process(delta):
 #		var meteor = new_meteor.instance()
 #		get_node("NodeMeteor").add_child(meteor)   
 		
-	score = get_node("Rocket2/Rocket2").get("score")
+	score = get_node("Rocket2").get("score")
 	$Hud/LabelScore2/LabelScore.text = str(score)  
 #	if int(score) % 10 == 0:
 #		if float(score) / 10.000:
@@ -116,8 +116,8 @@ func _on_Area2D_body_entered(area):
 
 func _on_AreaCoin_area_entered(area):
 	get_node("ShakeLabel").queue("Shake")
-	$Rocket2/Rocket2/CollisionPolygon2D2/ColorRect.show()
-	$Rocket2/Rocket2/CollisionPolygon2D2/AnimationFlicker.queue("Flicker")
+	#$Rocket2/Rocket2/CollisionPolygon2D2/ColorRect.show()
+	#$Rocket2/Rocket2/CollisionPolygon2D2/AnimationFlicker.queue("Flicker")
 	print("+1")
 	coin += 1
 	$Hud/LabelCoin.text = str(coin)
@@ -144,3 +144,4 @@ func _on_Exit_pressed():
 	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")
 	Engine.time_scale = 1
 	get_tree().paused = false
+

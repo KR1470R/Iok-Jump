@@ -47,10 +47,10 @@ func _physics_process(delta):
         
     if Input.is_action_pressed("ui_left") or touch_left:
         move_and_collide(LEFT * speed_right_left) 
-        rotation-= clamp(1*delta, -1,1)
+        #rotation-= clamp(1*delta, -1,1)
     if Input.is_action_pressed("ui_right") or touch_right:
         move_and_collide(RIGHT * speed_right_left)
-        rotation+=clamp(1*delta, -1,1)
+        #rotation+=clamp(1*delta, -1,1)
     if Input.is_action_pressed("ui_accept") or touch_boost:
 #        var bf = File.new()
 #        bf.open_encrypted_with_pass(boost_cheker, File.WRITE, OS.get_unique_id())

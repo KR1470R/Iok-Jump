@@ -1,26 +1,29 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://scripts/TimerCanvas.gd" type="Script" id=2]
 [ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://texture_ui/game/Background/Stars.png" type="Texture" id=4]
 [ext_resource path="res://scripts/Stars.gd" type="Script" id=5]
-[ext_resource path="res://MenuScenes/Rocket.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/Coin2.gd" type="Script" id=7]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=8]
-[ext_resource path="res://MenuScenes/meteor.tscn" type="PackedScene" id=9]
-[ext_resource path="res://MenuScenes/ufo.tscn" type="PackedScene" id=10]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=14]
-[ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=16]
-[ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=17]
-[ext_resource path="res://texture_ui/game/healthbartext/gayka.png" type="Texture" id=18]
-[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=20]
-[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=21]
+[ext_resource path="res://scripts/Coin2.gd" type="Script" id=6]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=7]
+[ext_resource path="res://MenuScenes/meteor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://MenuScenes/ufo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=10]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=11]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=15]
+[ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/game/healthbartext/gayka.png" type="Texture" id=17]
+[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=19]
+[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=20]
+[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=21]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=22]
+[ext_resource path="res://scripts/character.gd" type="Script" id=23]
+[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 255
@@ -199,11 +202,34 @@ outline_size = 5
 outline_color = Color( 0.176471, 0, 1, 1 )
 font_data = ExtResource( 3 )
 
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0, 0.6, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 0.503906, 0, 1, 1, 0.419785, 0.121094, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="ParticlesMaterial" id=20]
+emission_shape = 2
+emission_box_extents = Vector3( 71.96, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 3000, 0 )
+angular_velocity = 200.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 50.0
+scale_random = 0.85
+color_ramp = SubResource( 19 )
+anim_speed = 84.45
+anim_offset = 0.63
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TimerCanvas" type="CanvasLayer" parent="."]
 pause_mode = 2
+editor/display_folded = true
 layer = 2
 script = ExtResource( 2 )
 
@@ -247,13 +273,10 @@ scale = Vector2( 1.55071, 1.24783 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
-[node name="Rocket2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 926.542, 456.972 )
-
 [node name="Coin2" type="KinematicBody2D" parent="."]
 editor/display_folded = true
 position = Vector2( 500, 0 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin2"]
 visible = false
@@ -269,15 +292,15 @@ shape = SubResource( 5 )
 [node name="coin" type="Sprite" parent="Coin2/AreaCoin"]
 position = Vector2( 390.843, -87.321 )
 scale = Vector2( 1.87933, 1.87933 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="NodeMeteor" type="CanvasLayer" parent="."]
 
-[node name="Meteors" parent="." instance=ExtResource( 9 )]
+[node name="Meteors" parent="." instance=ExtResource( 8 )]
 position = Vector2( 298.798, -182.436 )
 z_index = -3
 
-[node name="UFO" parent="." instance=ExtResource( 10 )]
+[node name="UFO" parent="." instance=ExtResource( 9 )]
 position = Vector2( 12.771, -3.4874 )
 
 [node name="ShakeLabel" type="AnimationPlayer" parent="."]
@@ -288,29 +311,30 @@ anims/ShakeHealth = SubResource( 7 )
 anims/ScreenShake = SubResource( 8 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Gamepad" type="Node2D" parent="Hud"]
 
 [node name="Left" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 51.448, 837.764 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 11 )
+normal = ExtResource( 10 )
 
 [node name="Right" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 372.195, 844.472 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 12 )
+normal = ExtResource( 11 )
 
 [node name="Boost" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 1756.23, 841.391 )
 rotation = 1.58365
 scale = Vector2( 2.18013, 2.18013 )
-normal = ExtResource( 13 )
+normal = ExtResource( 12 )
 
 [node name="Pause" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 1748.54, 39.2543 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 14 )
+normal = ExtResource( 13 )
 
 [node name="LabelCoin" type="Label" parent="Hud"]
 margin_left = 146.687
@@ -323,7 +347,7 @@ text = "0"
 [node name="coin" type="Sprite" parent="Hud/LabelCoin"]
 position = Vector2( -65.4499, 52.4498 )
 scale = Vector2( 2.18, 2.18 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="HealthProgress" type="TextureProgress" parent="Hud"]
 margin_left = 89.0776
@@ -332,9 +356,9 @@ margin_right = 501.078
 margin_bottom = 117.0
 max_value = 120.0
 value = 100.0
-texture_under = ExtResource( 15 )
-texture_over = ExtResource( 16 )
-texture_progress = ExtResource( 17 )
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
 tint_over = Color( 0.270588, 0.352941, 0.392157, 1 )
 tint_progress = Color( 0.113725, 1, 0, 1 )
 nine_patch_stretch = true
@@ -343,7 +367,7 @@ nine_patch_stretch = true
 position = Vector2( -12.5042, 37.7279 )
 rotation = 4.13294
 scale = Vector2( 0.815166, 0.815166 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hud/HealthProgress"]
 "anims/New Anim" = SubResource( 10 )
@@ -371,7 +395,7 @@ text = "0"
 editor/display_folded = true
 layer = 2
 
-[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 19 )]
+[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 18 )]
 visible = false
 
 [node name="LoseMenu" type="Node" parent="PauseCanvas"]
@@ -424,13 +448,36 @@ custom_constants/separation = 40
 [node name="Restart" type="TextureButton" parent="PauseCanvas/LoseMenu/VBoxContainer"]
 margin_right = 470.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 20 )
+texture_normal = ExtResource( 19 )
 
 [node name="Exit" type="TextureButton" parent="PauseCanvas/LoseMenu/VBoxContainer"]
 margin_top = 250.0
 margin_right = 470.0
 margin_bottom = 460.0
-texture_normal = ExtResource( 21 )
+texture_normal = ExtResource( 20 )
+
+[node name="Rocket2" type="KinematicBody2D" parent="."]
+script = ExtResource( 21 )
+
+[node name="Area2D" type="Area2D" parent="Rocket2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocket2/Area2D"]
+polygon = PoolVector2Array( 853.752, 618.537, 856.915, 565.474, 882.918, 546.632, 884.538, 538.447, 887.266, 524.039, 891.956, 505.282, 895.622, 495.904, 899.799, 485.332, 907.217, 469.9, 913.187, 461.58, 919.809, 450.5, 923.488, 450.321, 933.665, 466.939, 937.263, 474.007, 943.817, 488.272, 948.701, 499.71, 952.813, 510.762, 955.691, 522.731, 957.523, 530.789, 959.354, 543.974, 960.819, 547.637, 984.138, 564.485, 991.572, 619.943, 990.287, 620.971, 960.986, 591.927, 937.854, 591.799, 948.759, 627.435, 947.878, 628.425, 892.241, 628.449, 892.165, 627.36, 904.698, 592.441, 884.521, 592.184 )
+
+[node name="character" type="Sprite" parent="Rocket2/Area2D"]
+position = Vector2( 922.746, 555.698 )
+scale = Vector2( 0.469, 0.469 )
+texture = ExtResource( 22 )
+script = ExtResource( 23 )
+
+[node name="Particles2D" type="Particles2D" parent="Rocket2/Area2D/character"]
+position = Vector2( -8.04, 155.88 )
+amount = 15
+lifetime = 0.3
+process_material = SubResource( 20 )
+
+[node name="Explosion" parent="Rocket2" instance=ExtResource( 24 )]
+position = Vector2( 420.102, 233.284 )
 [connection signal="animation_finished" from="TimerCanvas/TimerCount" to="TimerCanvas" method="_on_TimerCount_animation_finished"]
 [connection signal="area_entered" from="Coin2/AreaCoin" to="." method="_on_AreaCoin_area_entered"]
 [connection signal="pressed" from="Hud/Gamepad/Boost" to="TextureRect/Stars" method="_on_Boost_pressed"]
@@ -438,3 +485,4 @@ texture_normal = ExtResource( 21 )
 [connection signal="pressed" from="Hud/Gamepad/Pause" to="PauseCanvas/PauseMenu" method="_on_Pause_pressed"]
 [connection signal="pressed" from="PauseCanvas/LoseMenu/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="PauseCanvas/LoseMenu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="body_entered" from="Rocket2/Area2D" to="." method="_on_Area2D_body_entered"]
