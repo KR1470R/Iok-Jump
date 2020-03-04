@@ -1,32 +1,23 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/MenuScripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/menu/background_menu.png" type="Texture" id=2]
 [ext_resource path="res://MenuScenes/rocket_launch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://texture_ui/menu/buy_button.png" type="Texture" id=4]
-[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=6]
-[ext_resource path="res://texture_ui/menu/heart-logo-png-17.png" type="Texture" id=7]
-[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=8]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
+[ext_resource path="res://texture_ui/menu/heart-logo-png-17.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=7]
+[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=9]
 [ext_resource path="res://scripts/BestScore.gd" type="Script" id=10]
 [ext_resource path="res://texture_ui/menu/home.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/menu/start_button.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/menu/shop_button.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/menu/exit_button.png" type="Texture" id=14]
-[ext_resource path="res://texture_ui/menu/cina_button.png" type="Texture" id=15]
-[ext_resource path="res://texture_ui/menu/free_mode.png" type="Texture" id=16]
+[ext_resource path="res://texture_ui/menu/logo_lb.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 120
-use_filter = true
-font_data = ExtResource( 5 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 120
-font_data = ExtResource( 5 )
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("coin_icon:position")
@@ -65,7 +56,7 @@ tracks/2/keys = {
 "values": [ Vector2( -235.502, 540 ), Vector2( -258.884, 20 ), Vector2( -258.884, 175.049 ), Vector2( -265.039, 144.516 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("heart-logo-png-17:position")
@@ -152,25 +143,80 @@ tracks/6/keys = {
 "values": [ 0.0, -1.0, 1.0, -2.0, 2.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -3.0, 3.0, -2.0, 2.0, -1.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 80
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="GDScript" id=6]
-script/source = "extends HBoxContainer
+[sub_resource type="StyleBoxFlat" id=14]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id=9]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-"
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.25098, 0.243137, 0.282353, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="DynamicFont" id=10]
+size = 150
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=12]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.25098, 0.243137, 0.282353, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=16]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=17]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.25098, 0.243137, 0.282353, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Buttons:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -204,7 +250,7 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="RocketLaunch" parent="Background" instance=ExtResource( 3 )]
-position = Vector2( -65.856, -13.9805 )
+position = Vector2( -13.3111, 1.47385 )
 
 [node name="Elements" type="TextureRect" parent="."]
 margin_left = 509.381
@@ -219,38 +265,28 @@ position = Vector2( 852.8, 137.293 )
 scale = Vector2( 2.46114, 2.01444 )
 texture = ExtResource( 4 )
 
-[node name="WelcomeLabel" type="Label" parent="Elements"]
-margin_left = -17.0
-margin_top = 29.0
-margin_right = 643.0
-margin_bottom = 151.0
-custom_fonts/font = SubResource( 1 )
-text = "Iok Jump"
-align = 1
-valign = 1
-
 [node name="coin_icon" type="Sprite" parent="Elements"]
 position = Vector2( -415.178, 62.128 )
 scale = Vector2( 2.89149, 2.89149 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="heart-logo-png-17" type="Sprite" parent="Elements"]
 visible = false
 position = Vector2( -30.3564, 454.061 )
 scale = Vector2( 0.0764941, 0.0764941 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="heart-logo-png-18" type="Sprite" parent="Elements"]
 visible = false
 position = Vector2( -31.2588, 454.061 )
 scale = Vector2( 0.0802281, 0.0802281 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="heart-logo-png-19" type="Sprite" parent="Elements"]
 visible = false
 position = Vector2( -35.7715, 455.866 )
 scale = Vector2( 0.0750334, 0.0750334 )
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="Rocket_icon" type="TextureButton" parent="Elements"]
 visible = false
@@ -259,7 +295,7 @@ margin_top = 144.516
 margin_right = 398.961
 margin_bottom = 1120.52
 rect_pivot_offset = Vector2( 175.44, 264.2 )
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
 expand = true
 
 [node name="LabelCoin" type="Label" parent="Elements"]
@@ -267,21 +303,21 @@ margin_left = -329.28
 margin_top = -2.18
 margin_right = -239.28
 margin_bottom = 119.82
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "0"
 script = ExtResource( 9 )
 
 [node name="AnimationElements" type="AnimationPlayer" parent="Elements"]
 autoplay = "AnimatonElements"
-anims/AnimatonElements = SubResource( 3 )
-anims/RocketShake = SubResource( 4 )
+anims/AnimatonElements = SubResource( 4 )
+anims/RocketShake = SubResource( 5 )
 
 [node name="BestScore" type="Label" parent="Elements"]
 margin_left = 665.25
 margin_top = 290.0
 margin_right = 1635.25
 margin_bottom = 497.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "a"
 script = ExtResource( 10 )
 
@@ -294,63 +330,55 @@ margin_bottom = 132.253
 texture_normal = ExtResource( 11 )
 expand = true
 
+[node name="Sprite" type="Sprite" parent="Elements"]
+position = Vector2( 498.226, 182.184 )
+scale = Vector2( 1.82286, 1.82286 )
+texture = ExtResource( 12 )
+
 [node name="Buttons" type="CenterContainer" parent="."]
-editor/display_folded = true
-margin_left = 874.3
-margin_top = 300.0
-margin_right = 1844.3
-margin_bottom = 1152.0
+margin_left = 568.134
+margin_top = 349.087
+margin_right = 1538.13
+margin_bottom = 1201.09
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-margin_left = 250.0
-margin_top = 107.0
-margin_right = 720.0
-margin_bottom = 745.0
+margin_left = 259.0
+margin_top = 136.0
+margin_right = 711.0
+margin_bottom = 714.0
+custom_constants/separation = 61
 
-[node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_right = 470.0
-margin_bottom = 210.0
-texture_normal = ExtResource( 12 )
+[node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+margin_right = 452.0
+margin_bottom = 152.0
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
+text = "Play"
 
-[node name="Shop" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 214.0
-margin_right = 470.0
-margin_bottom = 424.0
-texture_normal = ExtResource( 13 )
+[node name="Shop" type="Button" parent="Buttons/VBoxContainer"]
+margin_top = 213.0
+margin_right = 452.0
+margin_bottom = 365.0
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 10 )
+text = "SHOp"
 
-[node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
-margin_top = 428.0
-margin_right = 470.0
-margin_bottom = 638.0
-texture_normal = ExtResource( 14 )
-
-[node name="CareerFree" type="HBoxContainer" parent="."]
-editor/display_folded = true
-visible = false
-margin_left = 862.3
-margin_top = 615.73
-margin_right = 1832.3
-margin_bottom = 825.73
-custom_constants/separation = 30
-script = SubResource( 6 )
-
-[node name="Career" type="TextureButton" parent="CareerFree"]
-margin_right = 470.0
-margin_bottom = 210.0
-texture_normal = ExtResource( 15 )
-
-[node name="Free mode" type="TextureButton" parent="CareerFree"]
-margin_left = 500.0
-margin_right = 970.0
-margin_bottom = 210.0
-texture_normal = ExtResource( 16 )
+[node name="Exit" type="Button" parent="Buttons/VBoxContainer"]
+margin_top = 426.0
+margin_right = 452.0
+margin_bottom = 578.0
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/font = SubResource( 10 )
+text = "EXIT"
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
 autoplay = "AnimtionElements"
-anims/AnimtionElements = SubResource( 7 )
+anims/AnimtionElements = SubResource( 8 )
 [connection signal="pressed" from="Elements/Rocket_icon" to="." method="_on_Rocket_icon_pressed"]
 [connection signal="pressed" from="Elements/Home" to="." method="_on_Home_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Shop" to="." method="_on_Shop_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="CareerFree/Free mode" to="." method="_on_Free_mode_pressed"]

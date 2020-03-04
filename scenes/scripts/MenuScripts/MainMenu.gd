@@ -53,9 +53,7 @@ func _on_HomeButton_pressed():
 	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")
 
 func _on_Play_pressed():
-	$Buttons/VBoxContainer.hide()
-	$CareerFree.show()
-	$Elements/Home.show()
+	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
 func _on_Rocket_icon_pressed():
 	get_node("Elements/heart-logo-png-17").show()
 	get_node("Elements/heart-logo-png-18").show()
@@ -67,9 +65,6 @@ func _on_Rocket_icon_pressed():
 		get_node("Elements/heart-logo-png-18").show()
 		get_node("Elements/heart-logo-png-19").show()
 	
-	
-func _on_Free_mode_pressed():
-	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
 
 func _on_Home_pressed():
 	get_tree().change_scene("res://MenuScenes/MainMenu.tscn")
