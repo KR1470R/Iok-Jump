@@ -8,7 +8,16 @@ var file_w
 var file_ships_w
 var lst
 
+
 func _ready():
+	$Background/Main/Hud/LabelScore2.hide()
+	$Background/Main/Coin2.hide()
+	$Background/Main/Hud.get_child(0).hide()
+	$Background/Main/Meteors.hide()
+	$Background/Main/UFO.hide()
+	$Background/Main/Hud/HealthProgress.hide()
+	$Background/Main/Hud/LabelCoin.hide()
+	
 #	OS.get_user_data_dir()
 	file_ships_w = File.new()
 	file_ships_w.open_encrypted_with_pass(ships,File.READ,OS.get_unique_id())
@@ -29,6 +38,7 @@ func _ready():
 		file_w.close()
 	file.close()
 	coins = int(coins)
+	
 func save():
 	var file_ws = File.new()
 	file_ws.open_encrypted_with_pass(ships,File.WRITE,OS.get_unique_id())

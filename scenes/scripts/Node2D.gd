@@ -122,10 +122,10 @@ func _on_AreaCoin_area_entered(area):
 	coin += 1
 	$Hud/LabelCoin.text = str(coin)
 	$Coin2.hide()
-	if int(score) % 4 == 0:
-		var new_meteor = load("res://MenuScenes/meteor.tscn")
-		var meteor = new_meteor.instance()
-		get_node("NodeMeteor").add_child(meteor)                            
+#	if int(score) % 4 == 0:
+#		var new_meteor = load("res://MenuScenes/meteor.tscn")
+#		var meteor = new_meteor.instance()
+#		get_node("NodeMeteor").add_child(meteor)                            
 	pass
 #		new_coin.instance()
 #		new_coin.add_child(new_coin)
