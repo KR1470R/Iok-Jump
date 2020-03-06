@@ -14,6 +14,7 @@ var node_rocket = load("res://texture_ui/game/characters/node_rocket_5.png")
 var threed_rocket = load("res://texture_ui/game/characters/3d_rocket_7.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    
     set_process(true)
     choose_rocket = File.new()
     choose_rocket.open_encrypted_with_pass(choose_rocket_path,File.READ,OS.get_unique_id())

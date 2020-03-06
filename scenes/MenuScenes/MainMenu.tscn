@@ -1,24 +1,22 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/MenuScripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://MenuScenes/Node2D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://texture_ui/menu/buy_button.png" type="Texture" id=3]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=4]
-[ext_resource path="res://texture_ui/menu/ball.png" type="Texture" id=5]
-[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=7]
-[ext_resource path="res://scripts/BestScore.gd" type="Script" id=8]
-[ext_resource path="res://texture_ui/menu/logo_lb.png" type="Texture" id=9]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=3]
+[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/LabelCoin.gd" type="Script" id=5]
+[ext_resource path="res://scripts/BestScore.gd" type="Script" id=6]
+[ext_resource path="res://texture_ui/menu/logo_lb.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
-font_data = ExtResource( 6 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 80
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
-font_data = ExtResource( 6 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 corner_radius_top_left = 20
@@ -41,7 +39,7 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=6]
 size = 150
-font_data = ExtResource( 6 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 corner_radius_top_left = 20
@@ -110,60 +108,46 @@ margin_right = -1.10803
 expand = true
 
 [node name="Main" parent="Background" instance=ExtResource( 2 )]
-position = Vector2( -489.467, -422.295 )
+position = Vector2( -590.267, -422.295 )
 
 [node name="Elements" type="TextureRect" parent="."]
+pause_mode = 2
 margin_left = 509.381
 margin_top = 26.9734
 margin_right = 927.381
 margin_bottom = 173.973
 expand = true
 
-[node name="BackForLabel" type="Sprite" parent="Elements"]
-visible = false
-position = Vector2( 852.8, 137.293 )
-scale = Vector2( 2.46114, 2.01444 )
+[node name="coin_icon" type="Sprite" parent="Elements"]
+position = Vector2( -918.885, -373.727 )
+scale = Vector2( 2.89149, 2.89149 )
 texture = ExtResource( 3 )
 
-[node name="coin_icon" type="Sprite" parent="Elements"]
-position = Vector2( -886.885, -332.727 )
-scale = Vector2( 2.89149, 2.89149 )
-texture = ExtResource( 4 )
-
-[node name="Rocket_icon" type="TextureButton" parent="Elements"]
-visible = false
-margin_left = -265.039
-margin_top = 144.516
-margin_right = 398.961
-margin_bottom = 1120.52
-rect_pivot_offset = Vector2( 175.44, 264.2 )
-texture_normal = ExtResource( 5 )
-expand = true
-
 [node name="LabelCoin" type="Label" parent="Elements"]
-margin_left = -785.086
-margin_top = -397.035
-margin_right = -695.086
-margin_bottom = -275.035
+margin_left = -835.086
+margin_top = -436.035
+margin_right = -745.086
+margin_bottom = -314.035
 custom_fonts/font = SubResource( 1 )
 text = "0"
-script = ExtResource( 7 )
+script = ExtResource( 5 )
 
 [node name="BestScore" type="Label" parent="Elements"]
-margin_left = -303.157
+margin_left = -388.207
 margin_top = -102.495
-margin_right = -243.157
+margin_right = -328.207
 margin_bottom = -20.495
 custom_fonts/font = SubResource( 2 )
 text = "a"
-script = ExtResource( 8 )
+script = ExtResource( 6 )
 
 [node name="Logo" type="Sprite" parent="Elements"]
 position = Vector2( 2.54718, -222.518 )
 scale = Vector2( 1.91176, 1.67937 )
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 
 [node name="Buttons" type="CenterContainer" parent="."]
+pause_mode = 2
 margin_left = -21.1755
 margin_top = -101.926
 margin_right = 948.824
@@ -177,6 +161,7 @@ margin_bottom = 714.0
 custom_constants/separation = 61
 
 [node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+pause_mode = 2
 margin_right = 452.0
 margin_bottom = 152.0
 custom_styles/hover = SubResource( 3 )
@@ -186,6 +171,7 @@ custom_fonts/font = SubResource( 6 )
 text = "Play"
 
 [node name="Shop" type="Button" parent="Buttons/VBoxContainer"]
+pause_mode = 2
 margin_top = 213.0
 margin_right = 452.0
 margin_bottom = 365.0
@@ -196,6 +182,7 @@ custom_fonts/font = SubResource( 6 )
 text = "SHOp"
 
 [node name="Exit" type="Button" parent="Buttons/VBoxContainer"]
+pause_mode = 2
 margin_top = 426.0
 margin_right = 452.0
 margin_bottom = 578.0
@@ -206,6 +193,8 @@ custom_fonts/font = SubResource( 6 )
 text = "EXIT"
 
 [node name="TransitionElements" type="AnimationPlayer" parent="."]
+pause_mode = 2
 autoplay = "AnimtionElements"
 anims/AnimtionElements = SubResource( 13 )
-[connection signal="pressed" from="Elements/Rocket_icon" to="." method="_on_Rocket_icon_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

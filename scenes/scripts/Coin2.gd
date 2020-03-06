@@ -66,5 +66,5 @@ func _physics_process(delta):
 			move_and_collide(BOTTOM*speed*5)
 	if self.position.y >= screenSize.y+100:
 		self.position = Vector2(rpos,-50)
-		self.show()
+
 

@@ -1,29 +1,29 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scripts/Node2D.gd" type="Script" id=1]
 [ext_resource path="res://texture_ui/game/Background/background.png" type="Texture" id=2]
 [ext_resource path="res://texture_ui/game/Background/rocket_pad.png" type="Texture" id=3]
-[ext_resource path="res://scripts/Coin2.gd" type="Script" id=4]
-[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=5]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=6]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=7]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=8]
-[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=9]
-[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=11]
-[ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=12]
-[ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=13]
-[ext_resource path="res://texture_ui/game/healthbartext/gayka.png" type="Texture" id=14]
-[ext_resource path="res://scripts/LabelScore2.gd" type="Script" id=15]
-[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=16]
-[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=17]
-[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=18]
-[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=19]
-[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=20]
-[ext_resource path="res://scripts/character.gd" type="Script" id=21]
-[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=23]
-[ext_resource path="res://scripts/AnimatedSpriteMeteor.gd" type="Script" id=24]
+[ext_resource path="res://texture_ui/game/Background/gradient.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Coin2.gd" type="Script" id=5]
+[ext_resource path="res://texture_ui/menu/coin.png" type="Texture" id=6]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark23.png" type="Texture" id=7]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark24.png" type="Texture" id=8]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark48.png" type="Texture" id=9]
+[ext_resource path="res://texture_ui/game/screen_button/flatDark13.png" type="Texture" id=10]
+[ext_resource path="res://fonts/AndroidAssassin-WXXY.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://texture_ui/game/healthbartext/emptybar.png" type="Texture" id=12]
+[ext_resource path="res://texture_ui/game/healthbartext/borderbar.png" type="Texture" id=13]
+[ext_resource path="res://texture_ui/game/healthbartext/progressbar.png" type="Texture" id=14]
+[ext_resource path="res://texture_ui/game/healthbartext/gayka.png" type="Texture" id=15]
+[ext_resource path="res://scripts/LabelScore2.gd" type="Script" id=16]
+[ext_resource path="res://MenuScenes/PauseMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://texture_ui/menu/buy_button (copy).png" type="Texture" id=18]
+[ext_resource path="res://texture_ui/menu/backtomenu_button.png" type="Texture" id=19]
+[ext_resource path="res://scripts/RocketBody.gd" type="Script" id=20]
+[ext_resource path="res://texture_ui/game/characters/character.png" type="Texture" id=21]
+[ext_resource path="res://scripts/character.gd" type="Script" id=22]
+[ext_resource path="res://MenuScenes/Explosion.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=24]
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_00_delay-0-removebg-preview.png" type="Texture" id=25]
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_01_delay-0-removebg-preview.png" type="Texture" id=26]
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_02_delay-0-removebg-preview.png" type="Texture" id=27]
@@ -43,12 +43,52 @@
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_29_delay-0-removebg-preview.png" type="Texture" id=41]
 [ext_resource path="res://texture_ui/game/meteors/meteor1_frm/frame_30_delay-0-removebg-preview.png" type="Texture" id=42]
 
-[sub_resource type="PhysicsMaterial" id=21]
+[sub_resource type="PhysicsMaterial" id=1]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="Animation" id=21]
+resource_name = "shakescreen"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9, 1.1, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.143587, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -100, 0 ), Vector2( 50, 50 ), Vector2( -50, -50 ), Vector2( 20, 20 ), Vector2( -20, -20 ), Vector2( 0, 0 ), Vector2( -100, 0 ), Vector2( 0, 0 ), Vector2( -20, -20 ), Vector2( -50, -50 ), Vector2( 100, 100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Rocket2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 221.65 ), Vector2( 0, -384.68 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("background_start:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 4.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 840.12, 484.261 ), Vector2( 840.12, 2000 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 32.1692
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Hud/LabelCoin:rect_position")
@@ -63,7 +103,7 @@ tracks/0/keys = {
 "values": [ Vector2( 146.687, 210.257 ), Vector2( 146.687, 129.592 ), Vector2( 146.687, 180.492 ), Vector2( 146.687, 142.212 ), Vector2( 146.687, 146.687 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Hud/HealthProgress:rect_position")
@@ -78,7 +118,7 @@ tracks/0/keys = {
 "values": [ Vector2( 37.374, 17.988 ), Vector2( 37.374, 48.598 ), Vector2( 37.374, 35.258 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -93,11 +133,11 @@ tracks/0/keys = {
 "values": [ Vector2( 36, 36 ), Vector2( -6, 4 ), Vector2( 16, 20 ), Vector2( -19.47, 7.73 ), Vector2( 6, -9 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=6]
 size = 100
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
@@ -111,7 +151,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Heart:rotation_degrees")
 tracks/0/interp = 1
@@ -125,27 +165,27 @@ tracks/0/keys = {
 "values": [ 0.0, 236.8, 60.0 ]
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=9]
 size = 110
 outline_color = Color( 1, 0, 0, 1 )
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
-[sub_resource type="Shader" id=13]
+[sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
 uniform float amount : hint_range(0,10);
 void fragment() {
     COLOR.rgb = textureLod(SCREEN_TEXTURE,SCREEN_UV,amount).rgb;
 }  "
 
-[sub_resource type="ShaderMaterial" id=14]
-shader = SubResource( 13 )
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
 shader_param/amount = 1.69
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=12]
 size = 120
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=13]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:material:shader_param/amount")
@@ -160,20 +200,20 @@ tracks/0/keys = {
 "values": [ 0.0, 2.535 ]
 }
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=14]
 size = 120
 outline_size = 5
 outline_color = Color( 0.176471, 0, 1, 1 )
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=15]
 offsets = PoolRealArray( 0, 0.6, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.503906, 0, 1, 1, 0.419785, 0.121094, 1 )
 
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 15 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=17]
 emission_shape = 2
 emission_box_extents = Vector3( 71.96, 1, 1 )
 flag_disable_z = true
@@ -184,15 +224,15 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 50.0
 scale_random = 0.85
-color_ramp = SubResource( 19 )
+color_ramp = SubResource( 16 )
 anim_speed = 84.45
 anim_offset = 0.63
 
-[sub_resource type="CapsuleShape2D" id=24]
+[sub_resource type="CapsuleShape2D" id=18]
 radius = 26.3121
 height = 48.816
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
 "frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": true,
@@ -200,7 +240,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=20]
 resource_name = "meteor1"
 length = 1.7
 loop = true
@@ -225,25 +265,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="background_start" type="Sprite" parent="Background "]
-position = Vector2( 966.22, 537.655 )
-scale = Vector2( 1.00406, 1.00361 )
+position = Vector2( 840.12, 484.261 )
+scale = Vector2( 1.41706, 1.17822 )
 texture = ExtResource( 2 )
 
-[node name="rocket_pad" type="Sprite" parent="Background "]
-position = Vector2( 892.419, 755.971 )
-scale = Vector2( 0.429389, 0.529006 )
+[node name="rocket_pad" type="Sprite" parent="Background /background_start"]
+position = Vector2( 36.9068, 230.61 )
+scale = Vector2( 0.303015, 0.448986 )
 texture = ExtResource( 3 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Background "]
-physics_material_override = SubResource( 21 )
+[node name="StaticBody2D" type="StaticBody2D" parent="Background /background_start"]
+editor/display_folded = true
+position = Vector2( -592.862, -411.01 )
+scale = Vector2( 0.705688, 0.848736 )
+physics_material_override = SubResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background /StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background /background_start/StaticBody2D"]
 polygon = PoolVector2Array( 847.609, 875.601, 876.988, 850.719, 972.618, 850.719, 1001.85, 875.451 )
 
+[node name="transitiontostar" type="Sprite" parent="Background /background_start"]
+position = Vector2( 155.264, -663.874 )
+scale = Vector2( 8.93277, 3.49063 )
+texture = ExtResource( 4 )
+
+[node name="Shake&ETC" type="AnimationPlayer" parent="Background "]
+autoplay = "shakescreen"
+anims/shakescreen = SubResource( 21 )
+
 [node name="Coin2" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 500, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin2"]
 visible = false
@@ -254,21 +305,21 @@ position = Vector2( 376.386, -121.747 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2/AreaCoin"]
 visible = false
 position = Vector2( 376.829, -102.912 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="coin" type="Sprite" parent="Coin2/AreaCoin"]
 position = Vector2( 390.843, -87.321 )
 scale = Vector2( 1.87933, 1.87933 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="NodeMeteor" type="CanvasLayer" parent="."]
 
 [node name="ShakeLabel" type="AnimationPlayer" parent="."]
-anims/Shake = SubResource( 6 )
-anims/ShakeHealth = SubResource( 7 )
+anims/Shake = SubResource( 3 )
+anims/ShakeHealth = SubResource( 4 )
 
 [node name="ShakeScreen" type="AnimationPlayer" parent="."]
-anims/ScreenShake = SubResource( 8 )
+anims/ScreenShake = SubResource( 5 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -278,36 +329,36 @@ editor/display_folded = true
 [node name="Left" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 51.448, 837.764 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 6 )
+normal = ExtResource( 7 )
 
 [node name="Right" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 372.195, 844.472 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 7 )
+normal = ExtResource( 8 )
 
 [node name="Boost" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 1756.23, 841.391 )
 rotation = 1.58365
 scale = Vector2( 2.18013, 2.18013 )
-normal = ExtResource( 8 )
+normal = ExtResource( 9 )
 
 [node name="Pause" type="TouchScreenButton" parent="Hud/Gamepad"]
 position = Vector2( 1748.54, 39.2543 )
 scale = Vector2( 2.18, 2.18 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 
 [node name="LabelCoin" type="Label" parent="Hud"]
 margin_left = 146.687
 margin_top = 146.687
 margin_right = 221.687
 margin_bottom = 248.687
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "0"
 
 [node name="coin" type="Sprite" parent="Hud/LabelCoin"]
 position = Vector2( -65.4499, 52.4498 )
 scale = Vector2( 2.18, 2.18 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="HealthProgress" type="TextureProgress" parent="Hud"]
 margin_left = 89.0776
@@ -316,9 +367,9 @@ margin_right = 501.078
 margin_bottom = 117.0
 max_value = 120.0
 value = 100.0
-texture_under = ExtResource( 11 )
-texture_over = ExtResource( 12 )
-texture_progress = ExtResource( 13 )
+texture_under = ExtResource( 12 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
 tint_over = Color( 0.270588, 0.352941, 0.392157, 1 )
 tint_progress = Color( 0.113725, 1, 0, 1 )
 nine_patch_stretch = true
@@ -327,11 +378,11 @@ nine_patch_stretch = true
 position = Vector2( -12.5042, 37.7279 )
 rotation = 4.13294
 scale = Vector2( 0.815166, 0.815166 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hud/HealthProgress"]
-"anims/New Anim" = SubResource( 10 )
-"anims/New Anim (2)" = SubResource( 11 )
+"anims/New Anim" = SubResource( 7 )
+"anims/New Anim (2)" = SubResource( 8 )
 
 [node name="LabelScore2" type="Label" parent="Hud"]
 anchor_left = 0.5
@@ -340,23 +391,22 @@ margin_left = -369.138
 margin_top = 34.0
 margin_right = 40.8618
 margin_bottom = 146.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 9 )
 text = "Score"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="LabelScore" type="Label" parent="Hud/LabelScore2"]
 margin_left = 435.965
 margin_right = 517.965
 margin_bottom = 112.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.945098, 0.0784314, 0.0784314, 1 )
 text = "0"
 
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
-editor/display_folded = true
 layer = 2
 
-[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 16 )]
+[node name="PauseMenu" parent="PauseCanvas" instance=ExtResource( 17 )]
 visible = false
 
 [node name="LoseMenu" type="Node" parent="PauseCanvas"]
@@ -365,7 +415,7 @@ editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="PauseCanvas/LoseMenu"]
 visible = false
-material = SubResource( 14 )
+material = SubResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.941176 )
@@ -378,13 +428,13 @@ margin_left = -736.0
 margin_top = 146.67
 margin_right = 737.0
 margin_bottom = 393.67
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "You are destroyed
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PauseCanvas/LoseMenu"]
-"anims/New Anim" = SubResource( 16 )
+"anims/New Anim" = SubResource( 13 )
 
 [node name="score" type="Label" parent="PauseCanvas/LoseMenu"]
 visible = false
@@ -392,7 +442,7 @@ margin_left = 310.914
 margin_top = 313.306
 margin_right = 1541.91
 margin_bottom = 435.306
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 14 )
 text = "Your score 2213"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseCanvas/LoseMenu"]
@@ -410,60 +460,58 @@ custom_constants/separation = 40
 [node name="Restart" type="TextureButton" parent="PauseCanvas/LoseMenu/VBoxContainer"]
 margin_right = 470.0
 margin_bottom = 210.0
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 18 )
 
 [node name="Exit" type="TextureButton" parent="PauseCanvas/LoseMenu/VBoxContainer"]
 margin_top = 250.0
 margin_right = 470.0
 margin_bottom = 460.0
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 19 )
 
 [node name="Rocket2" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 221.65 )
-script = ExtResource( 19 )
+script = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocket2"]
+polygon = PoolVector2Array( 853.752, 618.537, 856.915, 565.474, 882.918, 546.632, 884.538, 538.447, 887.266, 524.039, 891.956, 505.282, 895.622, 495.904, 899.799, 485.332, 907.217, 469.9, 913.187, 461.58, 919.809, 450.5, 923.488, 450.321, 933.665, 466.939, 937.263, 474.007, 943.817, 488.272, 948.701, 499.71, 952.813, 510.762, 955.691, 522.731, 957.523, 530.789, 959.354, 543.974, 960.819, 547.637, 984.138, 564.485, 991.572, 619.943, 990.287, 620.971, 960.986, 591.927, 937.854, 591.799, 948.759, 627.435, 947.878, 628.425, 892.241, 628.449, 892.165, 627.36, 904.698, 592.441, 884.521, 592.184 )
 
 [node name="Area2D" type="Area2D" parent="Rocket2"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocket2/Area2D"]
-polygon = PoolVector2Array( 853.752, 618.537, 856.915, 565.474, 882.918, 546.632, 884.538, 538.447, 887.266, 524.039, 891.956, 505.282, 895.622, 495.904, 899.799, 485.332, 907.217, 469.9, 913.187, 461.58, 919.809, 450.5, 923.488, 450.321, 933.665, 466.939, 937.263, 474.007, 943.817, 488.272, 948.701, 499.71, 952.813, 510.762, 955.691, 522.731, 957.523, 530.789, 959.354, 543.974, 960.819, 547.637, 984.138, 564.485, 991.572, 619.943, 990.287, 620.971, 960.986, 591.927, 937.854, 591.799, 948.759, 627.435, 947.878, 628.425, 892.241, 628.449, 892.165, 627.36, 904.698, 592.441, 884.521, 592.184 )
 
 [node name="character" type="Sprite" parent="Rocket2/Area2D"]
 position = Vector2( 922.746, 555.698 )
 scale = Vector2( 0.469, 0.469 )
-texture = ExtResource( 20 )
-script = ExtResource( 21 )
+texture = ExtResource( 21 )
+script = ExtResource( 22 )
 
 [node name="Particles2D" type="Particles2D" parent="Rocket2/Area2D/character"]
 position = Vector2( -8.04, 155.88 )
-amount = 15
+amount = 40
 lifetime = 0.3
-process_material = SubResource( 20 )
+process_material = SubResource( 17 )
 
-[node name="Explosion" parent="Rocket2" instance=ExtResource( 22 )]
+[node name="Explosion" parent="Rocket2" instance=ExtResource( 23 )]
 position = Vector2( 420.102, 233.284 )
 
 [node name="Meteors2" type="KinematicBody2D" parent="."]
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Meteors2"]
 position = Vector2( 4.87675, 23.8961 )
-shape = SubResource( 24 )
+shape = SubResource( 18 )
 
 [node name="Area2D" type="Area2D" parent="Meteors2"]
-script = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Meteors2/Area2D"]
-frames = SubResource( 22 )
+frames = SubResource( 19 )
 frame = 17
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meteors2/Area2D/AnimatedSprite"]
 autoplay = "meteor1"
-anims/meteor1 = SubResource( 23 )
+anims/meteor1 = SubResource( 20 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Meteors2/Area2D/AnimatedSprite"]
 position = Vector2( 4.87675, 23.8961 )
-shape = SubResource( 24 )
+shape = SubResource( 18 )
 [connection signal="area_entered" from="Coin2/AreaCoin" to="." method="_on_AreaCoin_area_entered"]
 [connection signal="pressed" from="Hud/Gamepad/Pause" to="PauseCanvas/PauseMenu" method="_on_Pause_pressed"]
 [connection signal="pressed" from="PauseCanvas/LoseMenu/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]

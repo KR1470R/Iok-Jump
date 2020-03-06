@@ -7,17 +7,17 @@ var list = [1,0,0,0,0,0]
 var file_w
 var file_ships_w
 var lst
-
+var s_c_p = false
 
 func _ready():
+	get_tree().paused = true
 	$Background/Main/Hud/LabelScore2.hide()
 	$Background/Main/Coin2.hide()
 	$Background/Main/Hud.get_child(0).hide()
-	$Background/Main/Meteors.hide()
-	$Background/Main/UFO.hide()
+	$Background/Main/Meteors2.hide()
 	$Background/Main/Hud/HealthProgress.hide()
 	$Background/Main/Hud/LabelCoin.hide()
-	
+	$Background/Main/Rocket2/Area2D/character/Particles2D.set_emitting(false)
 #	OS.get_user_data_dir()
 	file_ships_w = File.new()
 	file_ships_w.open_encrypted_with_pass(ships,File.READ,OS.get_unique_id())
@@ -64,6 +64,7 @@ func _on_HomeButton_pressed():
 
 func _on_Play_pressed():
 	get_tree().change_scene("res://MenuScenes/Node2D.tscn")
+	s_c_p = true
 func _on_Rocket_icon_pressed():
 	get_node("Elements/heart-logo-png-17").show()
 	get_node("Elements/heart-logo-png-18").show()

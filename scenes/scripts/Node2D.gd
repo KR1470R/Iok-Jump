@@ -32,6 +32,7 @@ var time_mult = 1.0
 var paused = false
 
 func _ready():
+	get_tree().paused = false
 	health_bar.value = health
 
 func _process(delta):
